@@ -7,7 +7,11 @@ function Admin() {
       <h1>Admin Page</h1>
       
         <Link to="/admin/trainees">View All Trainees</Link>
+        <br />
         <Link to="/admin/addcourse">Add Course</Link>
+        <br />
+        <Link to="/admin/updatecourse">Update Course</Link>
+
     </div>
   );
 }
