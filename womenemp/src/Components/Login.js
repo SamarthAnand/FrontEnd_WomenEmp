@@ -75,7 +75,8 @@ function Login() {
                 onChange={handleChange}
               />
             </div>
-            
+            <p className='error'>{formErrors.username}</p>
+
             <div className="field">
               <label>Password</label>
               <input
@@ -86,8 +87,8 @@ function Login() {
                 onChange={handleChange}
               />
             </div>
-            <p>{formErrors.password}</p>
-            <button type='submit' className="fluid ui button blue">Sign In</button>
+            <p className='error'>{formErrors.password}</p>
+            <button type='submit' className="buttonBlue">Sign In</button>
           </div>
           <div id='loginAfter'></div>
         </form>
