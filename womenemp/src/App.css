@@ -45,3 +45,19 @@ form{
   color: black;
   border-radius: 10px;
 }
+.tile{
+  display: flex;
+}
+.grid{
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  gap: 4px;
+  margin: 8px 4px;
+}
+.grid div{
+  border: 1px solid black;
+}
+#traineeHead{
+  background-color: black;
+  color: white;
+}
