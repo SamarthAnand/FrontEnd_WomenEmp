@@ -3,8 +3,13 @@ import {useEffect, useState} from "react"
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUser } from '../Actions/UserAction';
 
 function Login() {
+    const dispatch = useDispatch();
+    const data = useSelector((state) => state.user)
+
     const navigate = useNavigate();
     const initialValues = {username : "", password : ""}
     const [formValues, setFormValues] = useState(initialValues);
@@ -23,8 +28,10 @@ function Login() {
     }
   
     useEffect(()=>{
-      console.log(formErrors)
+      
       if(Object.keys(formErrors).length === 0 && isSubmit){
+        dispatch(fetchUser(formValues.username, formValues.password));
+        
         axios
         .get(`http://localhost:8202/api/UserLogin/${formValues.username}/${formValues.password}`)
         .then((data) => {
@@ -36,7 +43,10 @@ function Login() {
               navigate('/home');
             }
         })
-        .catch((error) => {document.getElementById('loginAfter').innerHTML = error.response.data.errorMessage});
+        .catch((error) => {
+          // console.log(error)
+          document.getElementById('loginAfter').innerHTML = error.response.data.errorMessage
+        });
       }
     },[formErrors])
   

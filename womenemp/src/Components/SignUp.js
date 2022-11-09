@@ -1,8 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addTrainee } from "../Actions/TraineeActions";
 
 function SignUp() {
+  const dispatch = useDispatch();
   const initialValues = {
     traineeId:100,
     userName: "",
@@ -34,15 +36,7 @@ function SignUp() {
   useEffect(()=>{
     console.log(formErrors)
     if(Object.keys(formErrors).length === 0 && isSubmit){
-      axios
-      .post(`http://localhost:8202/api/Trainee`, formValues)
-      .then((data) => {
-          console.log(data)
-      })
-      .catch((error) => {
-        // console.log(error)
-        document.getElementById('loginAfter').innerHTML = error.response.data.errorMessage
-    });
+      dispatch(addTrainee(formValues));
     }
   },[formErrors])
 
