@@ -6,7 +6,9 @@ const allReducers = combineReducers({
     allTrainees : traineeReducer,
     trainee : selectedTraineeReducer ,
     allCourses : trainingCourseReducer,
-    Course : selectedTrainingCourseReducer
+    Course : selectedTrainingCourseReducer,
+    allfeedbacks : feedbackReducer,
+    feedback : selectedFeedbackReducer
 })
 
 export default allReducers;
