@@ -22,6 +22,8 @@ function App() {
           <Route path="/admin/addcourse" element={<AddCourse />} />
           <Route path="/admin/updatecourse" element={<UpdateCourse />} />
           <Route path="/admin/searchcoursebyid" element={<SearchCourseById/>} />
+          <Route path="/feedback" element= {<Feedback />} />
+          <Route path="/admin/viewallfeedback" element= {<ViewAllFeedback />} />
         </Routes>
       </div>
     </Router>
