@@ -62,11 +62,11 @@ function AddCourse() {
     }
     return (
       <div className="Container">
-        {Object.keys(formErrors).length === 0 && isSubmit ? (
+        {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
           <div className="ui message success">Signed in successfully</div>
         ) : (
           <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
-        )}
+        )} */}
         <form onSubmit={handleSubmit}>
           <h1>New Course Form</h1>
           <div className="ui divider"></div>

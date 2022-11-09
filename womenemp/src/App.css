@@ -50,14 +50,29 @@ form{
 }
 .grid{
   display: grid;
-  grid-template-columns: repeat(11, 1fr);
+  grid-template-columns: repeat(11, auto);
   gap: 4px;
   margin: 8px 4px;
 }
 .grid div{
   border: 1px solid black;
+  padding: 2px 10px;
 }
-#traineeHead{
+#traineeHead, #schemeHead{
   background-color: black;
   color: white;
+}
+.admin{
+  background-color: rgb(243, 245, 243);
+}
+.admin div{
+  width: 400px;
+  margin: 10px auto;
+  padding: 30px;
+  background-color: rgb(225, 225, 248);
+  border-radius: 20px;
+}
+.tableContainer{
+  margin: auto;
+  width: 700px;
 }

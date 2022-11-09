@@ -3,19 +3,23 @@ import { Link } from "react-router-dom";
 
 function Admin() {
   return (
-    <div>
+    <div className="admin">
       <h1>Admin Page</h1>
-
+      <div>
       <Link to="/admin/trainees">View All Trainees</Link>
-      <br />
+      </div>
+      <div>
       <Link to="/admin/addcourse">Add Course</Link>
-      <br />
+      </div>
+      <div>
       <Link to="/admin/updatecourse">Update Course</Link>
-      <br />
+      </div>
+      <div>
       <Link to="/admin/Schemes">View All Schemes</Link>
-      <br />
+      </div>
+      <div>
       <Link to="/admin/addscheme">Add Scheme</Link>
-      <br />
+      </div>
     </div>
   );
 }
