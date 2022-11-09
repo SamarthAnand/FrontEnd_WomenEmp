@@ -141,8 +141,8 @@ function UpdateCourse() {
               />
             </div>
             <p>{formErrors.courseCompletionStatus}</p>
-            <button type='update' className="fluid ui button blue mx-2">Update</button>
-            <button onClick={(e)=>{navigate('/admin/allcourses')}} className="fluid ui button blue">Back</button>
+            <button type='update' className="btn btn-primary mx-2">Update</button>
+            <button onClick={(e)=>{navigate('/admin/allcourses')}} className="btn btn-secondary mx-2">Back</button>
           </div>
           <div id='updateAfter'></div>
         </form>

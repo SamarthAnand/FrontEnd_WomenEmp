@@ -117,7 +117,8 @@ function AddCourse() {
               />
             </div>
             <p>{formErrors.courseCompletionStatus}</p>
-            <button type='submit' className="fluid ui button blue">Submit</button>
+            <button type='submit' className="btn btn-primary mx-2">Submit</button>
+            <button onClick={(e)=>{navigate('/admin')}} className="btn btn-secondary mx-2">Back</button>
           </div>
           <div id='submitAfter'></div>
         </form>

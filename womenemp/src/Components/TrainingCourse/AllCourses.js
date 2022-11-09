@@ -35,7 +35,7 @@ const deleteCourse= async (trainingCourseId)=> {
         <th scope="row" key={course.trainingCourseId}>{course.trainingCourseId}</th>
         <td>{course.courseName}</td>
         <td> 
-            <button className="btn btn-primary mx-2">View</button>
+            <Link to={`/admin/allcourses/coursedetails`} className="btn btn-primary mx-2">View</Link>
             <Link to ={`/admin/updatecourse/${course.trainingCourseId}`} className="btn btn-outline-primary mx-2">Update</Link>
             <button className="btn btn-danger mx-2" onClick={()=>deleteCourse(course.trainingCourseId)}>Delete</button>
         </td>
