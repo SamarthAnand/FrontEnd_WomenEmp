@@ -44,6 +44,7 @@
   background-color: rgb(187, 187, 251);
   color: black;
   border-radius: 10px;
+  cursor: pointer;
 }
 .tile{
   display: flex;
