@@ -7,12 +7,15 @@ import Trainees from "./Components/Trainee/Trainees";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AddCourse from "./Components/TrainingCourse/AddCourse";
 import UpdateCourse from "./Components/TrainingCourse/UpdateCourse";
+import AllCourses from "./Components/TrainingCourse/AllCourses";
+import SearchCourseById from "./Components/TrainingCourse/SearchCourseById";
 import Scheme from "./Components/Scheme/Scheme";
 import SchemesList from "./Components/Scheme/SchemesList";
 import TraineeById from "./Components/Trainee/TraineeById";
 import Feedback from "./Components/Feedback/AddFeedback";
 import ViewAllFeedback from "./Components/Feedback/ViewAllFeedback";
 import TraineeUpdate from "./Components/Trainee/TraineeUpdate";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
@@ -28,8 +31,12 @@ function App() {
           <Route path="/admin/schemes" element={<SchemesList />} />
           <Route path="/admin/trainees" element={<Trainees />} />
           <Route path="/signup" element={<SignUp />} />
+
           <Route path="/admin/addcourse" element={<AddCourse />} />
-          <Route path="/admin/updatecourse" element={<UpdateCourse />} />
+          <Route path="/admin/updatecourse/:trainingCourseId" element={<UpdateCourse />} />
+          <Route path="/admin/searchcoursebyid" element={<SearchCourseById/>} />
+          <Route path="/admin/allcourses" element={<AllCourses/>} />
+
           <Route path="/feedback" element= {<Feedback />} />
           <Route path="/admin/viewallfeedback" element= {<ViewAllFeedback />} />
         </Routes>

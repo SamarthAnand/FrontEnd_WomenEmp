@@ -1,11 +1,12 @@
-import React from 'react'
-import {useEffect, useState} from "react"
-import axios from 'axios';
-import {useNavigate} from 'react-router-dom'
-// import { Link } from 'react-router-dom';
+import React from 'react';
+import {useEffect, useState} from "react";
+import { useDispatch } from "react-redux";
+import { addTrainingCourse } from "../../Actions/TrainingCourseActions";
+import {useNavigate} from 'react-router-dom';
 
 function AddCourse() {
-    const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const navigate = useNavigate();
     const initialValues = {trainingCourseId: 100, courseName : "", courseDuration : "", startingDate: "", endingDate: "", courseCompletionStatus: ""}
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
@@ -25,19 +26,9 @@ function AddCourse() {
     useEffect(()=>{
       console.log(formErrors)
       if(Object.keys(formErrors).length === 0 && isSubmit){
-        axios
-        .post(`http://localhost:8202/api/TrainingCourse`,formValues)
-        .then((data) => {
-            document.getElementById('submitAfter').innerHTML = 'Course Added Successfully!'
-            console.log(formValues)
-            // if(formValues.username === 'admin'){
-            //   navigate('/admin')
-            // }else{
-            //   navigate('/home');
-            // }
-            navigate('/admin')
-        })
-        .catch((error) => {document.getElementById('submitAfter').innerHTML = error.response.data.errorMessage});
+        dispatch(addTrainingCourse((formValues)));
+        alert("Course Added!")
+        navigate(`/admin/allcourses`)
       }
     },[formErrors])
   
@@ -63,11 +54,11 @@ function AddCourse() {
     return (
       <div className="Container">
         {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
-          <div className="ui message success">Signed in successfully</div>
+          <div className="ui message success">Course added successfully</div>
         ) : (
           <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
         )} */}
-        <form onSubmit={handleSubmit} className="formView">
+        <form onSubmit={handleSubmit}>
           <h1>New Course Form</h1>
           <div className="ui divider"></div>
           <div className="ui form">
@@ -87,7 +78,7 @@ function AddCourse() {
               <input
                 type="text"
                 name="courseDuration"
-                placeholder="Enter the courseDuration of course"
+                placeholder="Enter the Duration of course"
                 value={formValues.courseDuration}
                 onChange={handleChange}
               />

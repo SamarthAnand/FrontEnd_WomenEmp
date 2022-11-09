@@ -11,9 +11,15 @@ function Admin() {
       <div>
       <Link to="/admin/addcourse">Add Course</Link>
       </div>
-      <div>
-      <Link to="/admin/updatecourse">Update Course</Link>
-      </div>
+        <div>
+        <Link to="/admin/updatecourse/:trainingCourseId">Update Course</Link>
+        </div>
+        <div>
+        <Link to="/admin/searchcoursebyid">Search Course By Id</Link>
+        </div>
+        <div>
+        <Link to= "/admin/allcourses">Display all Courses</Link>
+        </div>
       <div>
       <Link to="/admin/Schemes">View All Schemes</Link>
       </div>

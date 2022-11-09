@@ -6,6 +6,7 @@ import {useNavigate} from 'react-router-dom'
 
 function UpdateCourse() {
     const navigate = useNavigate();
+    // const {trainingCourseId} =useParams()
     const initialValues = {trainingCourseId : "", courseName : "", courseDuration : "", startingDate: "", endingDate: "", courseCompletionStatus: ""}
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
@@ -21,6 +22,7 @@ function UpdateCourse() {
       setFormErrors(validate(formValues))
       setIsSubmit(true);
     }
+    
   
     useEffect(()=>{
       console.log(formErrors)
@@ -29,13 +31,9 @@ function UpdateCourse() {
         .put(`http://localhost:8202/api/TrainingCourse`,formValues)
         .then((data) => {
             document.getElementById('updateAfter').innerHTML = 'Course Details Successfully Updated!'
-            console.log(formValues)
-            // if(formValues.username === 'admin'){
-            //   navigate('/admin')
-            // }else{
-            //   navigate('/home');
-            // }
-            navigate('/admin')
+            console.log(formValues.data)
+            alert("Update Successful")
+            navigate('/admin/allcourses')
         })
         .catch((error) => {document.getElementById('updateAfter').innerHTML = error.response.data.errorMessage});
       }
@@ -70,22 +68,23 @@ function UpdateCourse() {
         ) : (
           <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
         )} */}
-        <form onSubmit={handleSubmit} className="formView">
+        <form onSubmit={handleSubmit}>
           <h1>Update Course Form</h1>
           <div className="ui divider"></div>
           <div className="ui form">
 
           <div className="field">
-              <label>Course Id:</label>
+              <label>
+                Course Id:
               <input
                 type="text"
                 name="trainingCourseId"
                 placeholder="Enter the Course Id"
                 value={formValues.trainingCourseId}
                 onChange={handleChange}
-              />
+              /></label>
             </div>
-            <p>{formErrors.courseName}</p>
+            <p>{formErrors.trainingCourseId}</p>
 
             <div className="field">
               <label>Course Name:</label>
@@ -103,7 +102,7 @@ function UpdateCourse() {
               <input
                 type="text"
                 name="courseDuration"
-                placeholder="Enter the courseDuration of course"
+                placeholder="Enter the Duration of course"
                 value={formValues.courseDuration}
                 onChange={handleChange}
               />
@@ -142,7 +141,8 @@ function UpdateCourse() {
               />
             </div>
             <p>{formErrors.courseCompletionStatus}</p>
-            <button type='update' className="fluid ui button blue">Update</button>
+            <button type='update' className="fluid ui button blue mx-2">Update</button>
+            <button onClick={(e)=>{navigate('/admin/allcourses')}} className="fluid ui button blue">Back</button>
           </div>
           <div id='updateAfter'></div>
         </form>
