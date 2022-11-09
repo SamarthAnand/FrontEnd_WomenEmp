@@ -7,6 +7,8 @@ import Trainees from "./Components/Trainees";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AddCourse from "./Components/AddCourse";
 import UpdateCourse from "./Components/UpdateCourse";
+import Scheme from "./Components/Scheme";
+import SchemesList from "./Components/SchemesList";
 
 function App() {
   return (
@@ -16,7 +18,8 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/admin" element={<Admin />} />
-          <Route path="/schemes" element={<Scheme />} />
+          <Route path="/admin/addscheme" element={<Scheme />} />
+          <Route path="/admin/schemes" element={<SchemesList />} />
           <Route path="/admin/trainees" element={<Trainees />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/admin/addcourse" element={<AddCourse />} />

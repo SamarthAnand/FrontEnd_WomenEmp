@@ -7,9 +7,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
+
 function Scheme() {
     //  const [date, setDate] = useState(new Date());
-    const initialValues = { schemeName: "", schemeType: "", schemeEligibility: "", LaunchDate: "", schemeObjective: "" };
+    const initialValues = { schemeName: "", schemeType: "", schemeEligibility: "", launchDate: "", schemeObjective: "" };
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
@@ -31,11 +33,7 @@ function Scheme() {
                 .then((data) => {
                     document.getElementById('submitAfter').innerHTML = 'Scheme added Successfully'
                     console.log(data.data)
-                    //   if(formValues.username === 'admin'){
-                    //     navigate('/admin')
-                    //   }else{
-                    //     navigate('/home');
-                    //   }
+
                     Navigate('/schemes')
                 })
                 .catch((error) => {
@@ -60,8 +58,8 @@ function Scheme() {
         if (!value.schemeObjective) {
             errors.schemeObjective = "Please provide scheme Objective"
         }
-        if (!value.LaunchDate) {
-            errors.LaunchDate = "Please provide scheme date"
+        if (!value.launchDate) {
+            errors.launchDate = "Please provide scheme date"
         }
 
 
@@ -69,11 +67,11 @@ function Scheme() {
     }
     return (
         <Form onSubmit={handleSubmit}>
-            {Object.keys(formErrors).length === 0 && isSubmit ? (
+            {/*Object.keys(formErrors).length === 0 && isSubmit ? (
                 <div className="ui message success">Signed in successfully</div>
             ) : (
                 <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
-            )}
+            )*/}
             <Form.Group as={Row} className="mb-3" controlId="schemeName">
                 <Form.Label column sm="2">Scheme Name</Form.Label>
                 <Form.Control type="text" placeholder="Scheme Name" name="schemeName"
@@ -109,12 +107,12 @@ function Scheme() {
 
                 <Form.Control
                     type="date"
-                    name="LaunchDate"
+                    name="launchDate"
                     placeholder="DateRange"
                     onChange={handleChange}
                 />
             </Form.Group>
-            <p>{formErrors.LaunchDate}</p>
+            <p>{formErrors.launchDate}</p>
             <Button variant="primary" type="submit">Submit</Button>{' '}
             <div id='submitAfter'></div>
         </Form>
