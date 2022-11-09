@@ -13,6 +13,7 @@ function Admin() {
         <Link to="/admin/updatecourse">Update Course</Link>
         <br />
         <Link to="/admin/searchcoursebyid">Search Course By Id</Link>
+        <br/>
         <Link to="/admin/viewallfeedback">View all feedback</Link>
 
     </div>

@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AddCourse from "./Components/AddCourse";
 import UpdateCourse from "./Components/UpdateCourse";
 import SearchCourseById from "./Components/SearchCourseById";
+import Feedback from "./Components/AddFeedback";
+import ViewAllFeedback from "./Components/ViewAllFeedback";
 
 function App() {
   return (
