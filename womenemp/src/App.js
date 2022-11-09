@@ -10,6 +10,7 @@ import AddCourse from "./Components/TrainingCourse/AddCourse";
 import UpdateCourse from "./Components/TrainingCourse/UpdateCourse";
 import AllCourses from "./Components/TrainingCourse/AllCourses";
 import IndividualCourse from "./Components/TrainingCourse/IndividualCourse";
+import SearchCourseByName from "./Components/TrainingCourse/SearchCourseByName";
 
 import Scheme from "./Components/Scheme/Scheme";
 import SchemesList from "./Components/Scheme/SchemesList";
@@ -18,6 +19,7 @@ import Feedback from "./Components/Feedback/AddFeedback";
 import ViewAllFeedback from "./Components/Feedback/ViewAllFeedback";
 import TraineeUpdate from "./Components/Trainee/TraineeUpdate";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 
 function App() {
   return (
@@ -36,7 +38,7 @@ function App() {
 
           <Route path="/admin/addcourse" element={<AddCourse />} />
           <Route path="/admin/updatecourse/:trainingCourseId" element={<UpdateCourse />} />
-          {/* <Route path="/admin/searchcoursebyid" element={<SearchCourseById/>} /> */}
+          <Route path="/admin/searchcoursebyname" element={<SearchCourseByName/>} />
           <Route path="/admin/allcourses" element={<AllCourses/>} />
           <Route path="/admin/allcourses/coursedetails" element={<IndividualCourse/>} />
 
