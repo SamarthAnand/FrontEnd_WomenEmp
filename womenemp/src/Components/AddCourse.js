@@ -1,11 +1,10 @@
 import React from 'react'
 import {useEffect, useState} from "react"
-import axios from 'axios';
-import {useNavigate} from 'react-router-dom'
-// import { Link } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { addTrainingCourse } from "../Actions/TrainingCourseActions"
 
 function AddCourse() {
-    const navigate = useNavigate();
+  const dispatch = useDispatch()
     const initialValues = {trainingCourseId: 100, courseName : "", courseDuration : "", startingDate: "", endingDate: "", courseCompletionStatus: ""}
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
@@ -25,19 +24,8 @@ function AddCourse() {
     useEffect(()=>{
       console.log(formErrors)
       if(Object.keys(formErrors).length === 0 && isSubmit){
-        axios
-        .post(`http://localhost:8202/api/TrainingCourse`,formValues)
-        .then((data) => {
-            document.getElementById('submitAfter').innerHTML = 'Course Added Successfully!'
-            console.log(formValues)
-            // if(formValues.username === 'admin'){
-            //   navigate('/admin')
-            // }else{
-            //   navigate('/home');
-            // }
-            navigate('/admin')
-        })
-        .catch((error) => {document.getElementById('submitAfter').innerHTML = error.response.data.errorMessage});
+        dispatch(addTrainingCourse(formValues));
+        alert("Course Added!")
       }
     },[formErrors])
   

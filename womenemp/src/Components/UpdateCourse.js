@@ -103,7 +103,7 @@ function UpdateCourse() {
               <input
                 type="text"
                 name="courseDuration"
-                placeholder="Enter the courseDuration of course"
+                placeholder="Enter the Duration of course"
                 value={formValues.courseDuration}
                 onChange={handleChange}
               />
