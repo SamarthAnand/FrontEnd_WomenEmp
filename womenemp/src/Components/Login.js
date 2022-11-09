@@ -71,7 +71,7 @@ function Login() {
         ) : (
           <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
         )} */}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="formView">
           <h1>Login Form</h1>
           <div className="ui divider"></div>
           <div className="ui form">

@@ -5,11 +5,14 @@ import Admin from "./Components/Admin"
 import SignUp from "./Components/SignUp";
 import Trainees from "./Components/Trainee/Trainees";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AddCourse from "./Components/AddCourse";
-import UpdateCourse from "./Components/UpdateCourse";
-import Scheme from "./Components/Scheme";
-import SchemesList from "./Components/SchemesList";
+import AddCourse from "./Components/TrainingCourse/AddCourse";
+import UpdateCourse from "./Components/TrainingCourse/UpdateCourse";
+import Scheme from "./Components/Scheme/Scheme";
+import SchemesList from "./Components/Scheme/SchemesList";
 import TraineeById from "./Components/Trainee/TraineeById";
+import Feedback from "./Components/Feedback/AddFeedback";
+import ViewAllFeedback from "./Components/Feedback/ViewAllFeedback";
+import TraineeUpdate from "./Components/Trainee/TraineeUpdate";
 
 function App() {
   return (
@@ -19,6 +22,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/home/profile" element={<TraineeById />} />
+          <Route path="/home/profile/update" element={<TraineeUpdate />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/addscheme" element={<Scheme />} />
           <Route path="/admin/schemes" element={<SchemesList />} />
@@ -26,6 +30,8 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/admin/addcourse" element={<AddCourse />} />
           <Route path="/admin/updatecourse" element={<UpdateCourse />} />
+          <Route path="/feedback" element= {<Feedback />} />
+          <Route path="/admin/viewallfeedback" element= {<ViewAllFeedback />} />
         </Routes>
       </div>
     </Router>

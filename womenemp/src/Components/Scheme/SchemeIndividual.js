@@ -1,8 +1,8 @@
 import React from 'react'
 import { useEffect } from "react";
-import SchemesView from "./SchemesView";
+import SchemesView from "../SchemesView";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchSchemesById } from "../Actions/SchemeActions"
+import { fetchSchemesById } from "../../Actions/SchemeActions"
 
 
 function SchemeIndividual() {

@@ -1,21 +1,26 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { deleteTrainee, fetchTrainee } from '../../Actions/TraineeActions'
+import { deleteUser } from '../../Actions/UserAction'
 
 function TraineeById() {
     const user = useSelector((state) => state.user)
     const trainee = useSelector((state) => state.trainee)
     const dispatch = useDispatch()
-
+    const navigate = useNavigate();
     useEffect(()=>{
         fetchTrainee(user.userId)
     },[])
 
     const handleDelete = ()=> {
+        dispatch(deleteUser(user.userId))
         dispatch(deleteTrainee(user.userId))
+        navigate("/");
+        alert("successfully deleted")
     }
     const handleUpdate = ()=> {
-        
+        navigate("/home/profile/update")
     }
   return (
     <div>

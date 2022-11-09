@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import SchemesView from './SchemesView';
+import SchemesView from './Scheme/SchemesView';
 import Nav from './Nav'
 import { fetchSchemes } from '../Actions/SchemeActions';
 import { fetchTrainee } from '../Actions/TraineeActions';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const dispatch = useDispatch();
@@ -31,6 +32,7 @@ function Home() {
         <button className='buttonBlue' onClick={handleNgo}> View NGOs</button>
         <div id='schemes'><SchemesView schemes={schemes} /></div>
         <div id='ngos'></div>
+        <Link to="/feedback">Add new Feedback</Link>
     </div>
   )
 }

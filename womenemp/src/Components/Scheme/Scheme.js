@@ -66,7 +66,7 @@ function Scheme() {
         return errors;
     }
     return (
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} className="formView">
             {/*Object.keys(formErrors).length === 0 && isSubmit ? (
                 <div className="ui message success">Signed in successfully</div>
             ) : (

@@ -67,7 +67,7 @@ function AddCourse() {
         ) : (
           <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
         )} */}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="formView">
           <h1>New Course Form</h1>
           <div className="ui divider"></div>
           <div className="ui form">

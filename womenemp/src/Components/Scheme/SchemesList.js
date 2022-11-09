@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from "react";
 import SchemesView from "./SchemesView";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchSchemes } from "../Actions/SchemeActions"
+import { fetchSchemes } from "../../Actions/SchemeActions"
 
 
 function SchemesList() {

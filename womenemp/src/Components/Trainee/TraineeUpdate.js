@@ -1,24 +1,16 @@
-import React from "react";
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
+import { updateTrainee } from '../../Actions/TraineeActions';
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { addTrainee } from "../Actions/TraineeActions";
 
-function SignUp() {
-  const dispatch = useDispatch();
-  const initialValues = {
-    traineeId:100,
-    userName: "",
-    password: "",
-    firstName: "",
-    lastName: "",
-    location: "",
-    contact: "",
-    email: "",
-    familyInfo: "",
-    aadharNo: "",
-    dob: ""
-  };
-  const [formValues, setFormValues] = useState(initialValues);
+function TraineeUpdate() {
+
+    const trainee = useSelector((state) => state.trainee)
+    const navigate = useNavigate()
+    const dispatch = useDispatch();
+  
+  const [formValues, setFormValues] = useState(trainee);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
 
@@ -36,7 +28,9 @@ function SignUp() {
   useEffect(()=>{
     console.log(formErrors)
     if(Object.keys(formErrors).length === 0 && isSubmit){
-      dispatch(addTrainee(formValues));
+      dispatch(updateTrainee(formValues));
+      navigate("/home")
+      alert("Successfully updated")
     }
   },[formErrors])
 
@@ -63,8 +57,6 @@ function SignUp() {
     }
     if (!value.contact) {
       errors.contact = "Please provide contact";
-    } else if (value.contact.length !== 10) {
-      errors.contact = "Contact should be 10 digit number";
     }
     if (!value.email) {
       errors.email = "Please provide email";
@@ -74,8 +66,6 @@ function SignUp() {
     }
     if (!value.aadharNo) {
       errors.aadharNo = "Please provide Aadhar Number";
-    } else if (value.aadharNo.length !== 12) {
-      errors.aadharNo = "Aadhar number must be 12 digit number";
     }
     if (!value.dob) {
       errors.dob = "Please provide DOB";
@@ -85,82 +75,78 @@ function SignUp() {
 
   return (
     <div>
-        {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
-          <div className="ui message success">Signed in successfully</div>
-        ) : (
-          <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
-        )} */}
-      <form onSubmit={handleSubmit} className="formView">
-        <h1>Register New User</h1>
+        <form onSubmit={handleSubmit} className="formView">
+        <h1>Update User</h1>
+        
 
         <div className="field">
           <label>Username</label>
-          <input type="text" name="userName" onChange={handleChange} />
+          <input type="text" name="userName" value={formValues.userName} onChange={handleChange} />
         </div>
         <p className="error">{formErrors.userName}</p>
 
         <div className="field">
           <label>Password</label>
-          <input type="password" name="password" onChange={handleChange} />
+          <input type="password" name="password" value={formValues.password} onChange={handleChange} />
         </div>
         <p className="error">{formErrors.password}</p>
 
         <div className="field">
           <label>First Name</label>
-          <input type="text" name="firstName" onChange={handleChange} />
+          <input type="text" name="firstName" value={formValues.firstName} onChange={handleChange} />
         </div>
         <p className="error">{formErrors.firstName}</p>
 
         <div className="field">
           <label>Last Name</label>
-          <input type="text" name="lastName" onChange={handleChange} />
+          <input type="text" name="lastName" value={formValues.lastName} onChange={handleChange} />
         </div>
         <p className="error">{formErrors.lastName}</p>
 
         <div className="field">
           <label>Location</label>
-          <input type="text" name="location" onChange={handleChange} />
+          <input type="text" name="location" value={formValues.location} onChange={handleChange} />
         </div>
         <p className="error">{formErrors.location}</p>
 
         <div className="field">
           <label>Contact</label>
-          <input type="number" name="contact" onChange={handleChange} />
+          <input type="number" name="contact" value={formValues.contact} onChange={handleChange} />
         </div>
         <p className="error">{formErrors.contact}</p>
 
         <div className="field">
           <label>Email</label>
-          <input type="email" name="email" onChange={handleChange} />
+          <input type="email" name="email" value={formValues.email} onChange={handleChange} />
         </div>
         <p className="error">{formErrors.email}</p>
 
         <div className="field">
           <label>Family info</label>
-          <input type="text" name="familyInfo" onChange={handleChange} />
+          <input type="text" name="familyInfo" value={formValues.familyInfo} onChange={handleChange} />
         </div>
         <p className="error">{formErrors.familyInfo}</p>
 
         <div className="field">
           <label>Aadhar Number</label>
-          <input type="text" name="aadharNo" onChange={handleChange} />
+          <input type="text" name="aadharNo" value={formValues.aadharNo} onChange={handleChange} disabled/>
         </div>
         <p className="error">{formErrors.aadharNo}</p>
 
         <div className="field">
           <label>Date Of Birth</label>
-          <input type="date" name="dob" onChange={handleChange}/>
+          <input type="date" name="dob" value={formValues.dob} onChange={handleChange}/>
         </div>
         <p className="error">{formErrors.dob}</p>
         
         <button type="submit" className="buttonBlue">
-          Register
+          Update
         </button>
 
         <div id="loginAfter"></div>
       </form>
     </div>
-  );
+  )
 }
 
-export default SignUp;
+export default TraineeUpdate
