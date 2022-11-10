@@ -23,7 +23,7 @@ function Home() {
     document.getElementById('ngos').style.display = "block";
   }
   const handleFeed = ()=>{
-    navigate("/feedback")
+    navigate("/feedback/home")
   }
   useEffect(()=>{
     dispatch(fetchTrainee(user.userId))

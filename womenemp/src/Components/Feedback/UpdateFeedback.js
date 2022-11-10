@@ -2,16 +2,14 @@ import React, { useEffect, useState } from "react";
 import "../../Style/style.css";
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux';
 
-function Feedback(){ 
+function UpdateFeedback(){ 
+  
     
-  const dispatch= useDispatch();
-    const currUser = useSelector((state) => state.user);
     const d = new Date().toISOString().split("T")[0];
     const navigate = useNavigate();
     const [isSubmit, setIsSubmit] = useState(false);
-    const initialValues = {feedBackId:100,schemeRating:null,schemeTrainingRating:null,overallRating:null,currUser:{},comment:"",date:d};
+    const initialValues = {feedBackId:100,schemeRating:null,schemeTrainingRating:null,overallRating:null,comment:"",date:d};
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
    
@@ -28,16 +26,11 @@ function Feedback(){
     useEffect(()=>{
         console.log(formErrors)
         if(Object.keys(formErrors).length === 0 && isSubmit){
-          formValues.user = currUser;
            axios
-          .post(`http://localhost:8202/api/Feedback`,formValues)
-          .then((res) => {
+          .put(`http://localhost:8202/api/Feedback`,formValues)
+          .then(() => {
             alert("Feedback Submitted");
-            navigate('/home');
-          })
-          .catch((arr)=>{
-            alert("Feedback already present")
-            navigate('/home');
+              navigate('/home');
           })
       }
     },[formErrors])
@@ -67,12 +60,13 @@ function Feedback(){
         ) : (
           <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
         )} */}
-            <h2>Give your Feedback</h2>
+            <h2>Update Feedback</h2>
             <form onSubmit={handleSubmit}>
-                {/* <div><label>FeedbackID</label>
+                <div><label>FeedbackID</label>
                 <input type="number" 
                 name="feedBackId"
-                onChange={handleChange}></input></div> */}
+                placeholder="Enter Feedback ID"
+                onChange={handleChange}></input></div>
                 {/* <div>
                     
                     <input type="number" name="schemeRating"></input>
@@ -154,4 +148,4 @@ function Feedback(){
         </div>
     )
 }
-export default Feedback;
+export default UpdateFeedback;
