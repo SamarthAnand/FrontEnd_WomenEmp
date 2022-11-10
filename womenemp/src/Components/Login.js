@@ -71,8 +71,9 @@ function Login() {
         ) : (
           <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
         )} */}
+        <h2 id='loginHead'>Women Empowerment Website</h2>
         <form onSubmit={handleSubmit} className="formView">
-          <h1>Login Form</h1>
+          <h3>Login Form</h3>
           <div className="ui divider"></div>
           <div className="ui form">
             <div className="field">

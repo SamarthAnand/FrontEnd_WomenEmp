@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import NavAdmin from "../NavAdmin";
 
 export default function SearchCourseByName() {
 
@@ -18,7 +19,8 @@ export default function SearchCourseByName() {
   };
 
   return (
-    <div className="container">
+    <div>
+      <NavAdmin />
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
           <h2 className="text-center m-4">Register User</h2>

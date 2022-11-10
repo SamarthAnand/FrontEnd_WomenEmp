@@ -1,6 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 function TraineeView({ trainees }) {
+  // const user = useSelector((state) => state.user)
+  
   return (
     <table class="table table-striped">
       <thead>
@@ -15,7 +18,7 @@ function TraineeView({ trainees }) {
           <th>Aadhar No</th>
           <th>DOB</th>
           <th>Training Course</th>
-          <th>Feedback</th>
+          {/* <th>Feedback</th> */}
         </tr>
       </thead>
       <tbody>
@@ -38,7 +41,7 @@ function TraineeView({ trainees }) {
                   ? trainee.trainingCourse.trainingCourseId
                   : "null"}
               </td>
-              <td>{trainee.feedback ? trainee.feedback.feedbackId : "null"}</td>
+              {/* <td>{trainee.feedback ? trainee.feedback.comment : "null"}</td> */}
             </tr>
           ))}
       </tbody>

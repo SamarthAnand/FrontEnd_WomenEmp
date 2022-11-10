@@ -1,16 +1,20 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { fetchFeedbackByUserId } from '../../Actions/FeedbackActions'
 import { deleteTrainee, fetchTrainee } from '../../Actions/TraineeActions'
 import { deleteUser } from '../../Actions/UserAction'
+import Nav from '../Nav'
 
 function TraineeById() {
     const user = useSelector((state) => state.user)
     const trainee = useSelector((state) => state.trainee)
+    const feed = useSelector((state) => state.feedback)
     const dispatch = useDispatch()
     const navigate = useNavigate();
     useEffect(()=>{
-        fetchTrainee(user.userId)
+        dispatch(fetchTrainee(user.userId))
+        dispatch(fetchFeedbackByUserId(user.userId))
     },[])
 
     const handleDelete = ()=> {
@@ -24,6 +28,7 @@ function TraineeById() {
     }
   return (
     <div>
+        <Nav />
         <table class="table table-striped">
             <tbody>
             <tr>
@@ -72,7 +77,7 @@ function TraineeById() {
             </tr>
             <tr>
                 <td>Feedback : </td>
-                <td>{trainee.feedback ? trainee.feedback.overallRating: "Null"}</td>
+                <td>{feed.comment ? feed.comment: "Null"}</td>
             </tr>
             </tbody>
         </table>
