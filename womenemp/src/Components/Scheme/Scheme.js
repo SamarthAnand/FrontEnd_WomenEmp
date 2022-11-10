@@ -11,7 +11,9 @@ import Col from 'react-bootstrap/Col';
 
 function Scheme() {
     //  const [date, setDate] = useState(new Date());
-    const initialValues = { schemeName: "", schemeType: "", schemeEligibility: "", launchDate: "", schemeObjective: "" };
+    const initialValues = {
+        schemeName: "", schemeType: "", schemeEligibility: "", launchDate: "", schemeObjective: ""
+    };
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);

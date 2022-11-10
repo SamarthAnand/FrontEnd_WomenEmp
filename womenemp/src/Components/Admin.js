@@ -32,6 +32,7 @@ function Admin() {
         <div>
           <Link to="/admin/viewallfeedback">View all feedback</Link>
         </div>
+
       </div>
     </div>
   );
