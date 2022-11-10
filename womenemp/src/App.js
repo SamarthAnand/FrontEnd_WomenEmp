@@ -22,6 +22,12 @@ import TraineeUpdate from "./Components/Trainee/TraineeUpdate";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import SearchSchemeByType from "./Components/Scheme/SearchSchemeByType";
 
+import Feedbackbyscheme from "./Components/Feedback/SearchFeedbackByScheme";
+import UpdateFeedback from "./Components/Feedback/UpdateFeedback";
+import FeedbackbyId from "./Components/Feedback/SearchFeedbackById";
+import Feedbackbytraining from "./Components/Feedback/SearchFeedbackByTraining";
+import FeedbackHome from "./Components/Feedback/FeedbackHome";
+
 
 function App() {
   return (
@@ -49,8 +55,14 @@ function App() {
           <Route path="/admin/searchcoursebyname/:courseName" element={<SearchResult />} />
 
           <Route path="/feedback" element={<Feedback />} />
+          <Route path="/updatefeedback" element={<UpdateFeedback />} />
+          <Route path="/feedback/home" element={<FeedbackHome />} />
           <Route path="/admin/viewallfeedback" element={<ViewAllFeedback />} />
+          <Route path="/feedback/feedbackbyscheme" element={<Feedbackbyscheme />} />
+          <Route path="/feedback/feedbackbytraining" element={<Feedbackbytraining />} />
+          <Route path="/feedback/feedbackbyid" element={<FeedbackbyId />} />
         </Routes>
+
       </div>
     </Router>
   );
