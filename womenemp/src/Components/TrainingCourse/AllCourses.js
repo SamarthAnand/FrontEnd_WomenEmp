@@ -15,6 +15,8 @@ const loadCourses = async ()=>{
     const result = await axios.get('http://localhost:8202/api/TrainingCourse')
     console.log(result.data);
     setCourses(result.data);
+    
+    
 };
 const deleteCourse= async (trainingCourseId)=> {
     await axios.delete(`http://localhost:8202/api/TrainingCourse/${trainingCourseId}`)
@@ -22,8 +24,9 @@ const deleteCourse= async (trainingCourseId)=> {
 }
   return (
     
-    <div className='container '>
-      <div className="Heading">Courses Available are:</div>
+    <div >
+      <header className='back2'>
+          <h1 className='heading2'>Courses Available are:</h1></header>
         <div className='py-4'>
         <table className ="table table-hover border shadow table-striped">
         <thead>
@@ -52,7 +55,7 @@ const deleteCourse= async (trainingCourseId)=> {
   </tbody>
 </table>
         </div>
-      
+        <Link to={`/admin`} className="btn btn-primary border shadow mx-2">Other Actions</Link>
     </div>
     
   )
