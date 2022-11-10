@@ -29,7 +29,7 @@ function Feedback(){
     useEffect(()=>{
         // console.log(formErrors)
         if(Object.keys(formErrors).length === 0 && isSubmit){
-          formValues.user.userId = currUser.userId;
+          // formValues.user.userId = currUser.userId;
            axios
           .post(`http://localhost:8202/api/Feedback`,formValues)
           .then(() => {
