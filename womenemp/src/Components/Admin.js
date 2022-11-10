@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Nav from "./Nav";
+import NavAdmin from "./NavAdmin";
 
 function Admin() {
   return (
     <div>
-      <Nav />
+      <NavAdmin />
       <div className="admin">
         <h1>Admin Page</h1>
         <div>
@@ -32,6 +32,7 @@ function Admin() {
         <div>
           <Link to="/admin/viewallfeedback">View all feedback</Link>
         </div>
+
       </div>
     </div>
   );

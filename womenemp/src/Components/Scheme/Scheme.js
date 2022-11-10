@@ -7,11 +7,14 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import NavAdmin from '../NavAdmin';
 
 
 function Scheme() {
     //  const [date, setDate] = useState(new Date());
-    const initialValues = { schemeName: "", schemeType: "", schemeEligibility: "", launchDate: "", schemeObjective: "" };
+    const initialValues = {
+        schemeName: "", schemeType: "", schemeEligibility: "", launchDate: "", schemeObjective: ""
+    };
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
@@ -66,7 +69,10 @@ function Scheme() {
         return errors;
     }
     return (
-        <Form onSubmit={handleSubmit} className="formView">
+        <div>
+            <NavAdmin />
+        
+        <Form onSubmit={handleSubmit} className="container">
             {/*Object.keys(formErrors).length === 0 && isSubmit ? (
                 <div className="ui message success">Signed in successfully</div>
             ) : (
@@ -116,6 +122,7 @@ function Scheme() {
             <Button variant="primary" type="submit">Submit</Button>{' '}
             <div id='submitAfter'></div>
         </Form>
+        </div>
     );
 
 }
