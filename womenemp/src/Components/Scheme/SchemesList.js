@@ -7,7 +7,7 @@ import { fetchSchemes } from "../../Actions/SchemeActions"
 
 function SchemesList() {
     const schemes = useSelector((state) => state.allSchemes.schemes)
-    const dispatch = useDispatch()
+    const dispatch = useDispatch() 
     useEffect(() => {
         dispatch(fetchSchemes())
     }, []);

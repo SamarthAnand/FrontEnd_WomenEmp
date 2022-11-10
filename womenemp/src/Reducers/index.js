@@ -4,6 +4,7 @@ import { selectedTraineeReducer, traineeReducer } from "./TraineeReducers";
 import { feedbackReducer, selectedFeedbackReducer } from "./FeedbackReducers";
 import { userReducer } from "./UserReducer";
 import { selectedTrainingCourseReducer, trainingCourseReducer } from "./TrainingCourseReducers";
+import { NgoReducer, selectedNgoReducer } from "./NgoReducers";
 
 const allReducers = combineReducers({
 
@@ -15,7 +16,9 @@ const allReducers = combineReducers({
     allfeedbacks : feedbackReducer,
     feedback : selectedFeedbackReducer,
     allCourses : trainingCourseReducer,
-    Course : selectedTrainingCourseReducer
+    Course : selectedTrainingCourseReducer,
+    allNgos : NgoReducer,
+    ngo : selectedNgoReducer
 })
 
 export default allReducers;

@@ -32,5 +32,5 @@ export const deleteTrainee = (id) =>
 export const updateTrainee = (trainee)=> 
     async function (dispatch){
         const response = await WomenEmpApi.put(`/Trainee`, trainee)
-        dispatch({type : 'addTrainee', payload: response.data})
+        dispatch({type : 'updateTrainee', payload: response.data})
     };

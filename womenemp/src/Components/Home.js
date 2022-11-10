@@ -4,11 +4,14 @@ import SchemesView from './Scheme/SchemesView';
 import Nav from './Nav'
 import { fetchSchemes } from '../Actions/SchemeActions';
 import { fetchTrainee } from '../Actions/TraineeActions';
+import { fetchNgos } from '../Actions/NgoActions';
 import { Link, useNavigate } from 'react-router-dom';
+import NgosView from './NGO/NgosView';
 
 function Home() {
   const dispatch = useDispatch();
   const schemes = useSelector((state) => state.allSchemes.schemes)
+  const ngos = useSelector((state) => state.allNgos.ngos)
   const user = useSelector((state) => state.user)
   const navigate = useNavigate();
   const handleScheme = ()=>{
@@ -25,6 +28,7 @@ function Home() {
   useEffect(()=>{
     dispatch(fetchTrainee(user.userId))
     dispatch(fetchSchemes())
+    dispatch(fetchNgos())
     document.getElementById('schemes').style.display = "none";
     document.getElementById('ngos').style.display = "none";
   },[])
@@ -36,7 +40,7 @@ function Home() {
         <button className='buttonBlue' onClick={handleNgo}> View NGOs</button>
         <button className='buttonBlue' onClick={handleFeed}> Add Feedback</button>
         <div id='schemes'><SchemesView schemes={schemes} /></div>
-        <div id='ngos'></div>
+        <div id='ngos'><NgosView ngos={ngos} /></div>
     </div>
   )
 }
