@@ -68,11 +68,11 @@ function Feedback(){
     return(
 
         <div className="feedback">
-            {Object.keys(formErrors).length === 0 && isSubmit ? (
+            {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
           <div className="ui message success">Feedback added succesfully</div>
         ) : (
           <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
-        )}
+        )} */}
             <h2>Give your Feedback</h2>
             <form onSubmit={handleSubmit}>
                 {/* <div><label>FeedbackID</label>
