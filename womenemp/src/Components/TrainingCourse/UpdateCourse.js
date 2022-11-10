@@ -2,7 +2,7 @@ import React from 'react'
 import {useEffect, useState} from "react"
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
-// import { Link } from 'react-router-dom';
+import "../../Style/Course.css";
 
 function UpdateCourse() {
     const navigate = useNavigate();
@@ -62,20 +62,17 @@ function UpdateCourse() {
       return errors;
     }
     return (
-      <div className="Container">
-        {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
-          <div className="ui message success">Signed in successfully</div>
-        ) : (
-          <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
-        )} */}
-        <form onSubmit={handleSubmit}>
-          <h1>Update Course Form</h1>
+      <div >
+        <header className='back1'>
+          <h1 className='heading1'>Update Course Form :</h1></header>
+      <div className='formBlock1'>
+        <form onSubmit={handleSubmit} className='color2'>
           <div className="ui divider"></div>
           <div className="ui form">
 
           <div className="field">
-              <label>
-                Course Id:
+              <label className='box2'>
+              <b>Course Id:</b>
               <input
                 type="text"
                 name="trainingCourseId"
@@ -87,7 +84,7 @@ function UpdateCourse() {
             <p>{formErrors.trainingCourseId}</p>
 
             <div className="field">
-              <label>Course Name:</label>
+              <label className='box2'><b>Course Name:</b></label>
               <input
                 type="text"
                 name="courseName"
@@ -98,7 +95,7 @@ function UpdateCourse() {
             </div>
             <p>{formErrors.courseName}</p>
             <div className="field">
-              <label>Course Duration:</label>
+              <label className='box2'><b>Course Duration:</b></label>
               <input
                 type="text"
                 name="courseDuration"
@@ -109,7 +106,7 @@ function UpdateCourse() {
             </div>
             <p>{formErrors.courseDuration}</p>
             <div className="field">
-              <label>Starting Date</label>
+              <label className='box2'><b>Starting Date:</b></label>
               <input
                 type="date"
                 name="startingDate"
@@ -120,7 +117,7 @@ function UpdateCourse() {
             </div>
             <p>{formErrors.startingDate}</p>
             <div className="field">
-              <label>Ending Date</label>
+              <label className='box2'><b>Ending Date:</b></label>
               <input
                 type="date"
                 name="endingDate"
@@ -131,7 +128,7 @@ function UpdateCourse() {
             </div>
             <p>{formErrors.endingDate}</p>
             <div className="field">
-              <label>Completion Status</label>
+              <label className='box2'><b>Completion Status:</b></label>
               <input
                 type="text"
                 name="courseCompletionStatus"
@@ -147,6 +144,7 @@ function UpdateCourse() {
           <div id='updateAfter'></div>
         </form>
         {/* <Link to='/signup'>SignUp</Link> */}
+      </div>
       </div>
     );
 }

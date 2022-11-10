@@ -61,8 +61,9 @@ function AddCourse() {
           <div className="ui divider"></div>
           <div className="ui form">
             <div className="field">
-              <label className='Field'><b>Course Name:</b></label>
+              <label className='box'><b>Course Name:</b></label>
               <input
+              className='boxsize'
                 type="text"
                 name="courseName"
                 placeholder="Enter the Course Name"
@@ -72,8 +73,9 @@ function AddCourse() {
             </div>
             <p>{formErrors.courseName}</p>
             <div className="field">
-              <label><b>Course Duration:</b></label>
+              <label className='box'><b>Course Duration:</b></label>
               <input
+              className='boxsize'
                 type="text"
                 name="courseDuration"
                 placeholder="Enter the Duration of course"
@@ -83,8 +85,9 @@ function AddCourse() {
             </div>
             <p>{formErrors.courseDuration}</p>
             <div className="field">
-              <label><b>Starting Date</b></label>
+              <label className='box'><b>Starting Date:</b></label>
               <input
+              className='boxsize'
                 type="date"
                 name="startingDate"
                 placeholder="Start Date"
@@ -94,8 +97,9 @@ function AddCourse() {
             </div>
             <p>{formErrors.startingDate}</p>
             <div className="field">
-              <label><b>Ending Date</b></label>
+              <label className='box'><b>Ending Date:</b></label>
               <input
+              className='boxsize'
                 type="date"
                 name="endingDate"
                 placeholder="End Date"
@@ -105,8 +109,9 @@ function AddCourse() {
             </div>
             <p>{formErrors.endingDate}</p>
             <div className="field">
-              <label><b>Completion Status</b></label>
+              <label className='box'><b>Completion Status:</b></label>
               <input
+              
                 type="text"
                 name="courseCompletionStatus"
                 placeholder="Enter the completion Status of Course."

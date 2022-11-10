@@ -24,7 +24,7 @@ export default function IndividualUser() {
   };
 
   return (
-    <div className="container">
+    <div >
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
           <h2 className="text-center m-4">Course Details</h2>
