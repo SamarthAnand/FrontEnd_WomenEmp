@@ -1,6 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import "../../Style/Course.css";
+
+
 function AllCourses() {
   const[courses,setCourses] = useState([])
   const{trainingCourseId} = useParams()
@@ -18,11 +21,13 @@ const deleteCourse= async (trainingCourseId)=> {
     loadCourses();
 }
   return (
-    <div className='container'>
+    
+    <div className='container '>
+      <div className="Heading">Courses Available are:</div>
         <div className='py-4'>
-        <table className ="table table-hover border shadow">
+        <table className ="table table-hover border shadow table-striped">
         <thead>
-    <tr>
+    <tr className="tableheadcolor">
       <th scope="col">Id</th>
       <th scope="col">Course Name</th>
       <th scope="col">Actions</th>
@@ -32,12 +37,12 @@ const deleteCourse= async (trainingCourseId)=> {
     {
         courses.map((course,trainingCourseId)=>(
             <tr>
-        <th scope="row" key={course.trainingCourseId}>{course.trainingCourseId}</th>
-        <td>{course.courseName}</td>
-        <td> 
-            <Link to={`/admin/allcourses/coursedetails/${course.trainingCourseId}`} className="btn btn-primary mx-2">View</Link>
-            <Link to ={`/admin/updatecourse/${course.trainingCourseId}`} className="btn btn-outline-primary mx-2">Update</Link>
-            <button className="btn btn-danger mx-2" onClick={()=>deleteCourse(course.trainingCourseId)}>Delete</button>
+        <th className="rowstyle" scope="row" key={course.trainingCourseId}>{course.trainingCourseId}</th>
+        <td className="rowstyle">{course.courseName}</td>
+        <td > 
+            <Link to={`/admin/allcourses/coursedetails/${course.trainingCourseId}`} className="btn btn-primary border shadow mx-2">View</Link>
+            <Link to ={`/admin/updatecourse/${course.trainingCourseId}`} className="btn btn-outline-primary shadow mx-2">Update</Link>
+            <button className="btn btn-danger border shadowmx-2" onClick={()=>deleteCourse(course.trainingCourseId)}>Delete</button>
         </td>
         </tr>
         ))
@@ -49,6 +54,7 @@ const deleteCourse= async (trainingCourseId)=> {
         </div>
       
     </div>
+    
   )
     
 }

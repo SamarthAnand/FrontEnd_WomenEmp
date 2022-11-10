@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import { useDispatch } from "react-redux";
 import { addTrainingCourse } from "../../Actions/TrainingCourseActions";
 import {useNavigate} from 'react-router-dom';
+import "../../Style/Course.css";
 
 function AddCourse() {
   const dispatch = useDispatch()
@@ -52,18 +53,15 @@ function AddCourse() {
       return errors;
     }
     return (
-      <div className="Container">
-        {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
-          <div className="ui message success">Course added successfully</div>
-        ) : (
-          <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
-        )} */}
-        <form onSubmit={handleSubmit}>
-          <h1>New Course Form</h1>
+      <div className='page'>
+        <header className='back'>
+          <h1 className='heading'>New Course Form :</h1></header>
+      <div className='formBlock'>
+        <form onSubmit={handleSubmit} className="color"> 
           <div className="ui divider"></div>
           <div className="ui form">
             <div className="field">
-              <label>Course Name:</label>
+              <label className='Field'><b>Course Name:</b></label>
               <input
                 type="text"
                 name="courseName"
@@ -74,7 +72,7 @@ function AddCourse() {
             </div>
             <p>{formErrors.courseName}</p>
             <div className="field">
-              <label>Course Duration:</label>
+              <label><b>Course Duration:</b></label>
               <input
                 type="text"
                 name="courseDuration"
@@ -85,7 +83,7 @@ function AddCourse() {
             </div>
             <p>{formErrors.courseDuration}</p>
             <div className="field">
-              <label>Starting Date</label>
+              <label><b>Starting Date</b></label>
               <input
                 type="date"
                 name="startingDate"
@@ -96,7 +94,7 @@ function AddCourse() {
             </div>
             <p>{formErrors.startingDate}</p>
             <div className="field">
-              <label>Ending Date</label>
+              <label><b>Ending Date</b></label>
               <input
                 type="date"
                 name="endingDate"
@@ -107,7 +105,7 @@ function AddCourse() {
             </div>
             <p>{formErrors.endingDate}</p>
             <div className="field">
-              <label>Completion Status</label>
+              <label><b>Completion Status</b></label>
               <input
                 type="text"
                 name="courseCompletionStatus"
@@ -117,12 +115,13 @@ function AddCourse() {
               />
             </div>
             <p>{formErrors.courseCompletionStatus}</p>
-            <button type='submit' className="btn btn-primary mx-2">Submit</button>
-            <button onClick={(e)=>{navigate('/admin')}} className="btn btn-secondary mx-2">Back</button>
+            <button type='submit' className="btn btn-primary shadow mx-2">Submit</button>
+            <button onClick={(e)=>{navigate('/admin')}}  className="btn btn-secondary mx-2">Back</button>
           </div>
           <div id='submitAfter'></div>
         </form>
         {/* <Link to='/signup'>SignUp</Link> */}
+      </div>
       </div>
     );
 }

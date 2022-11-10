@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import TraineeView from "./TraineeView";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchTrainees } from "../../Actions/TraineeActions"
+import NavAdmin from "../NavAdmin";
 
 function Trainees() {
   const trainees = useSelector((state) => state.allTrainees.trainees)
@@ -11,6 +12,7 @@ function Trainees() {
   }, []);
   return (
     <div>
+      <NavAdmin />
       <TraineeView trainees = {trainees} />
         
     </div>

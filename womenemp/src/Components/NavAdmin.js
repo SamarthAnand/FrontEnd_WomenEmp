@@ -1,23 +1,19 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-function Nav() {
+function NavAdmin() {
   const navigate = useNavigate();
-  const handleProfile = ()=>{
-    navigate("/home/profile")
-  }
   const handleLogout = ()=>{
     navigate("/")
   }
   const handleHome = ()=>{
-    navigate("/home")
+    navigate("/admin")
   }
   return (
     <div>
       <nav className="navbarCustom">
         <span>Women Empowerment</span>
         <div>
-          <button type="button" class="btn btn-outline-light" onClick={handleProfile}>MyProfile</button>
           <button type="button" class="btn btn-outline-light" onClick={handleLogout} >Logout</button>
           <button type="button" class="btn btn-outline-light" onClick={handleHome} >Home</button>
         </div>
@@ -26,4 +22,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default NavAdmin;

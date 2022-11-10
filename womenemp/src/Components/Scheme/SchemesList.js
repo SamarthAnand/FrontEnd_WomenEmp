@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import SchemesView from "./SchemesView";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSchemes } from "../../Actions/SchemeActions"
+import NavAdmin from '../NavAdmin';
 
 
 function SchemesList() {
@@ -13,6 +14,7 @@ function SchemesList() {
     }, []);
     return (
         <div>
+            <NavAdmin />
             <SchemesView schemes={schemes} />
 
         </div>
