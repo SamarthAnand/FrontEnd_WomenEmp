@@ -4,7 +4,7 @@ import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchSchemes } from "../../Actions/SchemeActions";
-import Select from 'react-select';
+ import Select from 'react-select';
 
 function Feedback(){ 
     
