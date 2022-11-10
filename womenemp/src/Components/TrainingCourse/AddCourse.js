@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import { useDispatch } from "react-redux";
 import { addTrainingCourse } from "../../Actions/TrainingCourseActions";
 import {useNavigate} from 'react-router-dom';
+import NavAdmin from '../NavAdmin';
 
 function AddCourse() {
   const dispatch = useDispatch()
@@ -53,6 +54,7 @@ function AddCourse() {
     }
     return (
       <div className="Container">
+        <NavAdmin />
         {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
           <div className="ui message success">Course added successfully</div>
         ) : (

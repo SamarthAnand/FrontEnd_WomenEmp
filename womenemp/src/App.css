@@ -6,7 +6,7 @@
 .App {
   text-align: center;
 }
-#navbar{
+.navbarCustom{
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -15,7 +15,7 @@
   padding: 10px;
 
 }
-#navbar button{
+.navbarCustom button{
   padding: 5px;
   margin: 0px 10px;
 }
@@ -77,4 +77,11 @@
 .tableContainer{
   margin: auto;
   width: 700px;
+}
+#loginHead{
+  background-color: rgb(0, 0, 50);
+  color: antiquewhite;
+  margin-bottom: 40px;
+  padding: 30px;
+  opacity: 0.8;
 }
