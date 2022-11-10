@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
-
+import FeedbackById from "./FeedbackById";
 import FeedbackList from './FeedbackList';
 import { useSelector, useDispatch } from "react-redux";
-import { fetchFeedbackByUserId} from "../../Actions/FeedbackActions";
+import { fetchFeedback} from "../../Actions/FeedbackActions";
 
 function FeedbackbyId(){
     const feedbacks = useSelector((state) => state.allfeedbacks.feedbacks);
     const dispatch= useDispatch();
-    const feedbackid = document.getElementById("feedbackid");
+    const feedbackId = document.getElementById("feedbackId");
     const [isSubmit, setIsSubmit] = useState(false);
     const [formErrors, setFormErrors] = useState({});
    
     useEffect(() => {
-        if(isSubmit && feedbackid.value)
-        dispatch(fetchFeedbackByUserId(feedbackid.value))
+        if(isSubmit && feedbackId.value)
+        dispatch(fetchFeedback(feedbackId.value))
         .then(()=>{
-            console.log(feedbackid.value)
+            console.log(feedbacks)
         })
         .catch((err)=>{
             alert("Feedback not found")
@@ -28,19 +28,18 @@ function FeedbackbyId(){
     }
     const validate = (value)=>{
         const errors = {}
-        if(!value.feedbackid){
-          errors.feedbackid = "Please provide Feedback ID"
+        if(!value.feedbackId){
+          errors.feedbackId = "Please provide Feedback ID"
         }
         return errors;
       }
     return(
-        
         <div>
-        {feedbacks &&<FeedbackList data={feedbacks} title="Feedback by ID" />}
+        {feedbacks &&<FeedbackById data={feedbacks} />}
         <div className="feedback">
-        <input type="number" id="feedbackid" placeholder="Enter Feedback ID">
+        <input type="number" id="feedbackId" placeholder="Enter Feedback ID" required>
         </input>
-        <button onClick={handleSubmit}>Search</button>
+        <button onClick={handleSubmit} >Search</button>
         </div>
         </div>
         

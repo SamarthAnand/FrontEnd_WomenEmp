@@ -19,7 +19,7 @@ function Feedbackbyscheme(){
         if(isSubmit && schemeName.value)
         dispatch(fetchfeedbacksByScheme(schemeName.value))
         .then(()=>{
-            console.log(schemeName.value)
+            console.log(feedbacks)
         })
         .catch((err)=>{
             alert("Scheme not found")

@@ -6,10 +6,17 @@ export const fetchFeedbacks= ()=>
         // console.log(response)
         dispatch({type : 'getFeedbacks', payload: response.data})
     };
-export const fetchFeedbackByUserId = (id)=> 
+    export const fetchFeedback= (id)=> 
     async function (dispatch){
         const response = await WomenEmpApi.get(`/Feedback/${id}`)
+        console.log(response)
         dispatch({type : 'getFeedbacks', payload: response.data})
+    };
+export const fetchFeedbackByUserId = (feedbackid)=> 
+    async function (dispatch){
+        const response = await WomenEmpApi.get(`/Feedback/${feedbackid}`)
+        console.log(response)
+        dispatch({type : 'getFeedback', payload: response.data})
     };
 export const addFeedback = (feedback)=> 
     async function (dispatch){
