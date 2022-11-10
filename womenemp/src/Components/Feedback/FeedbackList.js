@@ -10,6 +10,7 @@ const FeedbackList =({data,title})=>{
                             <th>Scheme Rating</th>
                             <th>Training Rating</th>
                             <th>Overall Rating</th>
+                            <th>User</th>
                             <th className="comment">Comments</th>
                             <th>Date</th>
                         </tr>
@@ -27,6 +28,9 @@ const FeedbackList =({data,title})=>{
                     <td>{dat.schemeRating}</td>
                     <td> {dat.schemeTrainingRating}</td>
                     <td> {dat.overallRating}</td>
+                    <td>
+                    {dat.user ? dat.user.userId: "null"}</td>
+                    
                     <td className="comment"><p className="commentpara">{dat.comment}</p></td>
                     <td>{dat.date}</td>
                     </tr>

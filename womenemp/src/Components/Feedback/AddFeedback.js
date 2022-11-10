@@ -5,7 +5,6 @@ import {useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 
 function Feedback(){ 
-    
     const dispatch= useDispatch();
     const currUser = useSelector((state) => state.user);
     const d = new Date().toISOString().split("T")[0];

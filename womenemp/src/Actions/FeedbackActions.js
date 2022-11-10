@@ -6,19 +6,29 @@ export const fetchFeedbacks= ()=>
         // console.log(response)
         dispatch({type : 'getFeedbacks', payload: response.data})
     };
-    
-export const fetchFeedback = (id)=> 
+export const fetchFeedbackByUserId = (id)=> 
     async function (dispatch){
         const response = await WomenEmpApi.get(`/Feedback/${id}`)
-        dispatch({type : 'getFeedback', payload: response.data})
+        dispatch({type : 'getFeedbacks', payload: response.data})
     };
 export const addFeedback = (feedback)=> 
     async function (dispatch){
         const response = await WomenEmpApi.post(`/Feedback`, feedback)
         dispatch({type : 'addFeedback', payload: response.data})
     };
-export const fetchFeedbackByUserId = (id) =>
+    export const UpdateFeedback = (feedback)=> 
     async function (dispatch){
-        const response = await WomenEmpApi.get(`/Feedback/User/${id}`)
-        dispatch({type : 'getFeedback', payload: response.data})
-    }
+        const response = await WomenEmpApi.put(`/Feedback`, feedback)
+        dispatch({type : 'addFeedback', payload: response.data})
+    };
+    
+export const fetchfeedbacksByScheme= (schemeName)=> 
+async function (dispatch){
+    const response = await WomenEmpApi.get(`/Feedback/Scheme/${schemeName}`)
+    dispatch({type : 'getFeedbacks', payload: response.data})
+};
+export const fetchfeedbacksByTraining= (courseName)=> 
+async function (dispatch){
+    const response = await WomenEmpApi.get(`/Feedback/TrainingCourse/${courseName}`)
+    dispatch({type : 'getFeedbacks', payload: response.data})
+};
