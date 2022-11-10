@@ -24,7 +24,8 @@ function FeedbackbyId(){
       const handleSubmit = (e)=>{
         e.preventDefault();
         setFormErrors(validate(feedbacks));
-        setIsSubmit(true)
+        setIsSubmit(true);
+
     }
     const validate = (value)=>{
         const errors = {}

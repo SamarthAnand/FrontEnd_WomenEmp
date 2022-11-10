@@ -81,7 +81,7 @@
   }
   @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 .list-body{
-  background-color: #d1b5b5b4;;
+  background-color:#f2f2f2;;
   font-family: 'Roboto', sans-serif;
   padding: 1cm 1cm 1cm 1cm ;
 }
@@ -103,7 +103,7 @@ h1{
   
   }
   .tbl-header{
-    background-color: rgba(199, 135, 135, 0.381);
+    background-color: #f2f2f2;;
    }
   .tbl-content{
     overflow-y:auto ;
