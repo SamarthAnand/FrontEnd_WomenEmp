@@ -2,13 +2,17 @@ import React, { useEffect, useState } from "react";
 import "../../Style/style.css";
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
+import { useDispatch, useSelector } from "react-redux";
+import { updateTrainee } from "../../Actions/TraineeActions";
 
 function Feedback(){ 
-    
+    // const trainee = useSelector((state) => state.trainee)
+    const currUser = useSelector((state) => state.user);
+    // const dispatch = useDispatch()
     const d = new Date().toISOString().split("T")[0];
     const navigate = useNavigate();
     const [isSubmit, setIsSubmit] = useState(false);
-    const initialValues = {feedBackId:100,schemeRating:null,schemeTrainingRating:null,overallRating:null,comment:"",date:d};
+    const initialValues = {feedBackId:100,schemeRating:null,schemeTrainingRating:null,overallRating:null,comment:"",date:d, user:{}};
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
    
@@ -23,8 +27,9 @@ function Feedback(){
         setIsSubmit(true)
     }
     useEffect(()=>{
-        console.log(formErrors)
+        // console.log(formErrors)
         if(Object.keys(formErrors).length === 0 && isSubmit){
+          formValues.user.userId = currUser.userId;
            axios
           .post(`http://localhost:8202/api/Feedback`,formValues)
           .then(() => {

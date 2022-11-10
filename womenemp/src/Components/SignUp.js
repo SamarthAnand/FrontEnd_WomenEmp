@@ -37,6 +37,7 @@ function SignUp() {
     console.log(formErrors)
     if(Object.keys(formErrors).length === 0 && isSubmit){
       dispatch(addTrainee(formValues));
+      alert("Successfully Signed Up")
     }
   },[formErrors])
 
