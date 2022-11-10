@@ -38,7 +38,7 @@ export default function SearchCourseByName() {
               />
             </div>
             <Link to={`/admin/searchcoursebyname/${courseName}`} className="btn btn-outline-primary">
-              Submit
+              Search
             </Link>
           </form>
         </div>

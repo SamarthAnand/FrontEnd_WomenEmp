@@ -11,6 +11,7 @@ import UpdateCourse from "./Components/TrainingCourse/UpdateCourse";
 import AllCourses from "./Components/TrainingCourse/AllCourses";
 import IndividualCourse from "./Components/TrainingCourse/IndividualCourse";
 import SearchCourseByName from "./Components/TrainingCourse/SearchCourseByName";
+import SearchResult from "./Components/TrainingCourse/SearchResult";
 
 import Scheme from "./Components/Scheme/Scheme";
 import SchemesList from "./Components/Scheme/SchemesList";
@@ -41,6 +42,7 @@ function App() {
           <Route path="/admin/searchcoursebyname" element={<SearchCourseByName/>} />
           <Route path="/admin/allcourses" element={<AllCourses/>} />
           <Route path="/admin/allcourses/coursedetails/:trainingCourseId" element={<IndividualCourse/>} />
+          <Route path="/admin/searchcoursebyname/:courseName" element={<SearchResult/>} />
 
           <Route path="/feedback" element= {<Feedback />} />
           <Route path="/admin/viewallfeedback" element= {<ViewAllFeedback />} />
