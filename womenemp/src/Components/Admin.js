@@ -9,28 +9,28 @@ function Admin() {
       <div className="admin">
         <h1>Admin Page</h1>
         <div>
-          <Link to="/admin/trainees">View All Trainees</Link>
+          <Link to="/admin/trainees" className="link-text ">View All Trainees</Link>
         </div>
         <div>
-          <Link to="/admin/addcourse">Add Course</Link>
+          <Link to="/admin/addcourse" className="link-text">Add Course</Link>
         </div>
         {/* <div>
         <Link to="/admin/updatecourse/:trainingCourseId">Update Course</Link>
         </div> */}
         <div>
-          <Link to="/admin/searchcoursebyname">Search Course By Name</Link>
+          <Link to="/admin/searchcoursebyname" className="link-text">Search Course By Name</Link>
         </div>
         <div>
-          <Link to="/admin/allcourses">Display all Courses</Link>
+          <Link to="/admin/allcourses" className="link-text">Display all Courses</Link>
         </div>
         <div>
-          <Link to="/admin/Schemes">View All Schemes</Link>
+          <Link to="/admin/Schemes" className="link-text">View All Schemes</Link>
         </div>
         <div>
-          <Link to="/admin/addscheme">Add Scheme</Link>
+          <Link to="/admin/addscheme" className="link-text">Add Scheme</Link>
         </div>
         <div>
-          <Link to="/admin/viewallfeedback">View all feedback</Link>
+          <Link to="/admin/viewallfeedback" className="link-text">View all feedback</Link>
         </div>
 
       </div>
