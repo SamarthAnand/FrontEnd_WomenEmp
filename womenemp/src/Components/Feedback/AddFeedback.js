@@ -12,7 +12,7 @@ function Feedback(){
     const d = new Date().toISOString().split("T")[0];
     const navigate = useNavigate();
     const [isSubmit, setIsSubmit] = useState(false);
-    const initialValues = {feedBackId:100,schemeRating:null,schemeTrainingRating:null,overallRating:null,comment:"",date:d};
+    const initialValues = {feedBackId:100,schemeRating:null,schemeTrainingRating:null,overallRating:null,comment:"",date:d, user:{}};
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
    
@@ -29,7 +29,7 @@ function Feedback(){
     useEffect(()=>{
         // console.log(formErrors)
         if(Object.keys(formErrors).length === 0 && isSubmit){
-          // formValues.user.userId = currUser.userId;
+          formValues.user = currUser;
            axios
           .post(`http://localhost:8202/api/Feedback`,formValues)
           .then(() => {
