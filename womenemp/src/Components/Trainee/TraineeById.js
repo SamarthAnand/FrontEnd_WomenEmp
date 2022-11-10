@@ -24,7 +24,8 @@ function TraineeById() {
     }
   return (
     <div>
-        <table style={{margin: "10px auto"}}>
+        <table class="table table-striped">
+            <tbody>
             <tr>
                 <td>Trainee Id :</td>
                 <td>{trainee.traineeId}</td>
@@ -73,6 +74,7 @@ function TraineeById() {
                 <td>Feedback : </td>
                 <td>{trainee.feedback ? trainee.feedback.overallRating: "Null"}</td>
             </tr>
+            </tbody>
         </table>
 
         <button className='buttonBlue' onClick={handleUpdate}>Update</button>

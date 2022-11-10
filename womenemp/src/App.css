@@ -9,6 +9,7 @@
 #navbar{
   display: flex;
   justify-content: space-around;
+  align-items: center;
   background-color: black;
   color: white;
   padding: 10px;
@@ -43,7 +44,7 @@
   padding: 10px 30px;
   background-color: rgb(187, 187, 251);
   color: black;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
 }
 .tile{

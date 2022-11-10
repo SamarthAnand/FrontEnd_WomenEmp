@@ -2,42 +2,47 @@ import React from "react";
 
 function TraineeView({ trainees }) {
   return (
-    <div>
-      <div className="grid" id="traineeHead">
-        <div>ID</div>
-        <div>UserName</div>
-        <div>Name</div>
-        <div>Location</div>
-        <div>Contact</div>
-        <div>Email</div>
-        <div>Family Info</div>
-        <div>Aadhar No</div>
-        <div>DOB</div>
-        <div>Training Course</div>
-        <div>Feedback</div>
-      </div>
-      {trainees && trainees.map((trainee) => (
-        <div className="grid" key={trainee.traineeId}>
-          <div>{trainee.traineeId}</div>
-          <div>{trainee.userName}</div>
-          <div>
-            {trainee.firstName} {trainee.lastName}
-          </div>
-          <div>{trainee.location}</div>
-          <div>{trainee.contact}</div>
-          <div>{trainee.email}</div>
-          <div>{trainee.familyInfo}</div>
-          <div>{trainee.aadharNo}</div>
-          <div>{trainee.dob}</div>
-          <div>
-            {trainee.trainingCourse
-              ? trainee.trainingCourse.trainingCourseId
-              : "null"}
-          </div>
-          <div>{trainee.feedback ? trainee.feedback.feedbackId : "null"}</div>
-        </div>
-      ))}
-    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>UserName</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Contact</th>
+          <th>Email</th>
+          <th>Family Info</th>
+          <th>Aadhar No</th>
+          <th>DOB</th>
+          <th>Training Course</th>
+          <th>Feedback</th>
+        </tr>
+      </thead>
+      <tbody>
+        {trainees &&
+          trainees.map((trainee) => (
+            <tr>
+              <td>{trainee.traineeId}</td>
+              <td>{trainee.userName}</td>
+              <td>
+                {trainee.firstName} {trainee.lastName}
+              </td>
+              <td>{trainee.location}</td>
+              <td>{trainee.contact}</td>
+              <td>{trainee.email}</td>
+              <td>{trainee.familyInfo}</td>
+              <td>{trainee.aadharNo}</td>
+              <td>{trainee.dob}</td>
+              <td>
+                {trainee.trainingCourse
+                  ? trainee.trainingCourse.trainingCourseId
+                  : "null"}
+              </td>
+              <td>{trainee.feedback ? trainee.feedback.feedbackId : "null"}</td>
+            </tr>
+          ))}
+      </tbody>
+    </table>
   );
 }
 
