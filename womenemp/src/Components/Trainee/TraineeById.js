@@ -75,10 +75,10 @@ function TraineeById() {
                 <td>Training Course :</td>
                 <td>{trainee.trainingCourse ? trainee.trainingCourse.courseName: "Null"}</td>
             </tr>
-            <tr>
+            {/* <tr>
                 <td>Feedback : </td>
                 <td>{feed.comment ? feed.comment: "Null"}</td>
-            </tr>
+            </tr> */}
             </tbody>
         </table>
 
