@@ -40,7 +40,7 @@ function App() {
           <Route path="/admin/updatecourse/:trainingCourseId" element={<UpdateCourse />} />
           <Route path="/admin/searchcoursebyname" element={<SearchCourseByName/>} />
           <Route path="/admin/allcourses" element={<AllCourses/>} />
-          <Route path="/admin/allcourses/coursedetails" element={<IndividualCourse/>} />
+          <Route path="/admin/allcourses/coursedetails/:trainingCourseId" element={<IndividualCourse/>} />
 
           <Route path="/feedback" element= {<Feedback />} />
           <Route path="/admin/viewallfeedback" element= {<ViewAllFeedback />} />
