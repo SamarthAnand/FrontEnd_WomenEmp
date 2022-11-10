@@ -12,7 +12,7 @@ function Feedback(){
     const d = new Date().toISOString().split("T")[0];
     const navigate = useNavigate();
     const [isSubmit, setIsSubmit] = useState(false);
-    const initialValues = {feedBackId:100,schemeRating:null,schemeTrainingRating:null,overallRating:null,comment:"",date:d, user:{}};
+    const initialValues = {feedBackId:100,schemeRating:null,schemeTrainingRating:null,overallRating:null,comment:"",date:d};
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
    
