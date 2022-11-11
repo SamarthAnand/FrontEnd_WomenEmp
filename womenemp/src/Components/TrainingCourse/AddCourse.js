@@ -30,7 +30,7 @@ function AddCourse() {
       if(Object.keys(formErrors).length === 0 && isSubmit){
         dispatch(addTrainingCourse((formValues)));
         alert("Course Added!")
-        navigate(`/admin/allcourses`)
+        navigate(`/admin`)
       }
     },[formErrors])
   
