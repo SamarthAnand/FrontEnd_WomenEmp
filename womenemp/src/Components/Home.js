@@ -9,6 +9,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import NgosView from './NGO/NgosView';
 import Carousel from 'react-bootstrap/Carousel';
 import pic3 from "../images/pic3.jpeg";
+import pic1 from "../images/pic1.JPG";
 import pic2 from "../images/pic2.jpeg";
 
 function Home() {
@@ -45,43 +46,35 @@ function Home() {
   return (
     <div>
       <Nav />
-      <Carousel activeIndex={index} onSelect={handleSelect}>
-        <Carousel.Item>
+      <Carousel activeIndex={index} onSelect={handleSelect} pauseOnHover={true}>
+        <Carousel.Item interval={1000} style={{ 'height': "300px" }} >
           <img
+            style={{ 'height': "300px" }}
             className="d-block w-100"
-            src={`${pic3}`}
+            src={`${pic1}`}
             alt="First slide"
           />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p></p>
-          </Carousel.Caption>
+
         </Carousel.Item>
-        <Carousel.Item>
+        <Carousel.Item interval={1000} style={{ 'height': "300px" }} >
           <img
+            style={{ 'height': "300px" }}
             className="d-block w-100"
-            src={`${pic3}`}
+            src={`${pic2}`}
             alt="Second slide"
           />
 
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p></p>
-          </Carousel.Caption>
+
         </Carousel.Item>
-        <Carousel.Item>
+        <Carousel.Item interval={1000} style={{ 'height': "300px" }} >
           <img
+            style={{ 'height': "300px" }}
             className="d-block w-100"
             src={`${pic3}`}
             alt="Third slide"
           />
 
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
 
-            </p>
-          </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
 

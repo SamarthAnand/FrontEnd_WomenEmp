@@ -102,14 +102,3 @@
   text-align: center;
   
 }
-.carousel {
-  width:300px;
-  height:200px;
-  margin: auto;
-}
-@media (max-width: 300px) {
-  .carousel {
-    width:auto;
-    height:auto;
-  }
-}

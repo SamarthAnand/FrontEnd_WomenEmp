@@ -10,35 +10,35 @@ function FeedbackHome() {
   const user = useSelector((state) => state.user)
   const navigate = useNavigate();
 
-  const handleFeed = ()=>{
+  const handleFeed = () => {
     navigate("/feedback")
   }
-  const updateFeed = ()=>{
+  const updateFeed = () => {
     navigate("/updatefeedback")
   }
-  const handleFeedbyId = ()=>{
+  const handleFeedbyId = () => {
     navigate("/feedback/feedbackbyid")
   }
-  const handleFeedbyScheme = ()=>{
+  const handleFeedbyScheme = () => {
     navigate("/feedback/feedbackbyscheme")
   }
-  const handleFeedbyTraining = ()=>{
+  const handleFeedbyTraining = () => {
     navigate("/feedback/feedbackbytraining")
   }
-  useEffect(()=>{
+  useEffect(() => {
     // dispatch(fetchTrainee(user.userId))
     // dispatch(fetchSchemes())
     // dispatch(fetchNgos());
-  },[])
+  }, [])
   // console.log(schemes)
   return (
     <div>
-        <Nav />
-        <button className='buttonBlue' onClick={handleFeed}> Add Feedback</button>
-        <button className='buttonBlue' onClick={updateFeed}> Update Feedback</button>
-        <button className='buttonBlue' onClick={handleFeedbyScheme}> Feedback by Scheme name</button>
-        <button className='buttonBlue' onClick={handleFeedbyTraining}> Feedback by Training name</button>
-        <button className='buttonBlue' onClick={handleFeedbyId}> Feedback by ID</button>
+      <Nav />
+      <button className='buttonBlue' onClick={handleFeed}> Add Feedback</button>
+      <button className='buttonBlue' onClick={updateFeed}> Update Feedback</button>
+      <button className='buttonBlue' onClick={handleFeedbyScheme}> Feedback by Scheme name</button>
+      <button className='buttonBlue' onClick={handleFeedbyTraining}> Feedback by Training name</button>
+      <button className='buttonBlue' onClick={handleFeedbyId}> Feedback by ID</button>
     </div>
   )
 }
