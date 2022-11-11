@@ -21,7 +21,7 @@ export default function IndividualUser() {
   const loadUser = async () => {
     const result = await axios.get(`http://localhost:8202/api/TrainingCourse/courseName/${courseName}`);
     setcourse(result.data);
-    alert("Search Complete")
+    // alert("Search Complete")
   };
 
   return (
@@ -57,7 +57,7 @@ export default function IndividualUser() {
               </ul>
             </div>
           </div>
-          <Link className="btn btn-primary my-2" to={"/admin/allcourses"}>
+          <Link className="btn btn-primary my-2" to={"/admin"}>
             Back to Courses!
           </Link>
         </div>
