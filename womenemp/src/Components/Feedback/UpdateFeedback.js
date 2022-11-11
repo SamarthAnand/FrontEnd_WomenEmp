@@ -2,15 +2,18 @@ import React, { useEffect, useState } from "react";
 import "../../Style/style.css";
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
+import { useSelector, useDispatch } from "react-redux";
+import { updateFeedback } from "../../Actions/FeedbackActions";
 
 function UpdateFeedback(){ 
   
-    
+    const feed = useSelector((state) => state.feedback);
     const d = new Date().toISOString().split("T")[0];
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [isSubmit, setIsSubmit] = useState(false);
     const initialValues = {feedBackId:100,schemeRating:null,schemeTrainingRating:null,overallRating:null,comment:"",date:d};
-    const [formValues, setFormValues] = useState(initialValues);
+    const [formValues, setFormValues] = useState(feed);
     const [formErrors, setFormErrors] = useState({});
    
 
@@ -26,13 +29,10 @@ function UpdateFeedback(){
     useEffect(()=>{
         console.log(formErrors)
         if(Object.keys(formErrors).length === 0 && isSubmit){
-           axios
-          .put(`http://localhost:8202/api/Feedback`,formValues)
-          .then(() => {
-            alert("Feedback Submitted");
-              navigate('/home');
-          })
-      }
+          dispatch(updateFeedback(formValues));
+          navigate("/home")
+          alert("Successfully updated")
+          }
     },[formErrors])
 
       const validate = (value)=>{
@@ -62,11 +62,11 @@ function UpdateFeedback(){
         )} */}
             <h2>Update Feedback</h2>
             <form onSubmit={handleSubmit}>
-                <div><label>FeedbackID</label>
+                {/* <div><label>FeedbackID</label>
                 <input type="number" 
                 name="feedBackId"
                 placeholder="Enter Feedback ID"
-                onChange={handleChange}></input></div>
+                onChange={handleChange}></input></div> */}
                 {/* <div>
                     
                     <input type="number" name="schemeRating"></input>
@@ -80,8 +80,9 @@ function UpdateFeedback(){
                 <select
                 required
                 name="schemeRating"
+                value={formValues.schemeRating}
                 onChange={handleChange}>
-                    <option value="" disabled selected hidden>Select your option</option>
+                    {/* <option value="" disabled selected hidden>Select your option</option> */}
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -99,8 +100,9 @@ function UpdateFeedback(){
                 <select
                 required
                 name="schemeTrainingRating"
+                value ={formValues.schemeTrainingRating}
                 onChange={handleChange}>
-                    <option value="" disabled selected hidden>Select your option</option>
+                    {/* <option value="" disabled selected hidden>Select your option</option> */}
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -117,8 +119,9 @@ function UpdateFeedback(){
                 <select
                 required
                 name="overallRating"
+                value ={formValues.overallRating}
                 onChange={handleChange}>
-                    <option value="" disabled selected hidden>Select your option</option>
+                    {/* <option value="" disabled selected hidden>Select your option</option> */}
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -138,7 +141,7 @@ function UpdateFeedback(){
                 type="text"
                 onChange={handleChange}
                 name="comment"
-                placeholder="Add comments"></textarea>
+                value={formValues.comment}></textarea>
         
                     <button role="button">Submit</button>
                 
