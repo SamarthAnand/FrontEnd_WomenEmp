@@ -3,7 +3,7 @@ import WomenEmpApi from '../Api/WomenEmpApi'
 export const fetchFeedbacks= ()=> 
     async function (dispatch){
         const response = await WomenEmpApi.get("/Feedback")
-        // console.log(response)
+        console.log(response)
         dispatch({type : 'getFeedbacks', payload: response.data})
     };
     export const fetchFeedback= (id)=> 

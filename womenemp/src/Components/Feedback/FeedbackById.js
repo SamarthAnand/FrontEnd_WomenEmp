@@ -31,17 +31,17 @@ function FeedbackById({data}) {
             <tr>
                 <td>User :</td>
                 <td>
-                    {data.user ? data.user.userId: "null"}</td>
+                    {data.user ? data.user.userId: ""}</td>
             </tr>
             <tr>
                 <td>Scheme :</td>
                 <td>
-                    {data.scheme ? data.scheme.schemeName: "null"}</td>
+                    {data.scheme ? data.scheme.schemeName: ""}</td>
             </tr>
             <tr>
                 <td>Training Course :</td>
                 <td>
-                    {data.trainingCourse ? data.trainingCourse.courseName: "null"}</td>
+                    {data.trainingCourse ? data.trainingCourse.courseName: ""}</td>
             </tr>
             <tr>
                 <td>Comments :</td>

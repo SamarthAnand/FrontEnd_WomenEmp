@@ -4,6 +4,7 @@ import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux";
 import { updateFeedback } from "../../Actions/FeedbackActions";
+import Nav from "../Nav";
 
 function UpdateFeedback(){ 
   
@@ -52,7 +53,7 @@ function UpdateFeedback(){
         return errors;
       }
     
-    return(
+    return(<div><Nav/>
 
         <div className="feedback">
             {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
@@ -148,7 +149,7 @@ function UpdateFeedback(){
                 </div>
             </form>
             <div className="feedbackAfter" id='feedbackAfter'></div>
-        </div>
+        </div></div>
     )
 }
 export default UpdateFeedback;

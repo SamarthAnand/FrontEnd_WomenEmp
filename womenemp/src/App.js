@@ -28,6 +28,7 @@ import UpdateFeedback from "./Components/Feedback/UpdateFeedback";
 import FeedbackbyId from "./Components/Feedback/SearchFeedbackById";
 import Feedbackbytraining from "./Components/Feedback/SearchFeedbackByTraining";
 import FeedbackHome from "./Components/Feedback/FeedbackHome";
+import Search from "./Components/Feedback/Search";
 
 
 function App() {
@@ -63,6 +64,7 @@ function App() {
           <Route path="/feedback/feedbackbyscheme" element={<Feedbackbyscheme />} />
           <Route path="/feedback/feedbackbytraining" element={<Feedbackbytraining />} />
           <Route path="/feedback/feedbackbyid" element={<FeedbackbyId />} />
+          <Route path="/searchfeedback" element={<Search />} />
 
         </Routes>
 

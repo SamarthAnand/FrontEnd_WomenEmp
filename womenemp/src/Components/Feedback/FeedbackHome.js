@@ -25,6 +25,9 @@ function FeedbackHome() {
   const handleFeedbyTraining = ()=>{
     navigate("/feedback/feedbackbytraining")
   }
+  const handleSearch = ()=>{
+    navigate("/searchfeedback")
+  }
   useEffect(()=>{
     // dispatch(fetchTrainee(user.userId))
     // dispatch(fetchSchemes())
@@ -39,6 +42,7 @@ function FeedbackHome() {
         <button className='buttonBlue' onClick={handleFeedbyScheme}> Feedback by Scheme name</button>
         <button className='buttonBlue' onClick={handleFeedbyTraining}> Feedback by Training name</button>
         <button className='buttonBlue' onClick={handleFeedbyId}> Feedback by ID</button>
+        <button className='buttonBlue' onClick={handleSearch}> Search Feedback</button>
     </div>
   )
 }
