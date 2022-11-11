@@ -89,7 +89,7 @@ function Feedback(){
                     <input type="number" name="overallRating"></input>
                     </div> */}
               <div>
-                <label>Scheme Name</label>
+                {/* <label>Scheme Name</label>
                 <select
                 required
                 name="scheme"
@@ -98,7 +98,7 @@ function Feedback(){
                     {schemes && schemes.map((dat)=>(
                       <option>{dat.schemeName}</option>
                     ))}
-                </select>
+                </select> */}
                         <label>Scheme Rating</label>
                 <select
                 required
