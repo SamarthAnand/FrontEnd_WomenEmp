@@ -23,7 +23,7 @@ export const addFeedback = (feedback)=>
         const response = await WomenEmpApi.post(`/Feedback`, feedback)
         dispatch({type : 'addFeedback', payload: response.data})
     };
-    export const UpdateFeedback = (feedback)=> 
+    export const updateFeedback = (feedback)=> 
     async function (dispatch){
         const response = await WomenEmpApi.put(`/Feedback`, feedback)
         dispatch({type : 'addFeedback', payload: response.data})
