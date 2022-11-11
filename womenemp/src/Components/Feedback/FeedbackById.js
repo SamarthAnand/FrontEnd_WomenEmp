@@ -41,7 +41,7 @@ function FeedbackById({data}) {
             <tr>
                 <td>Training Course :</td>
                 <td>
-                    {data.trainingCourse ? data.training.trainingCourse: "null"}</td>
+                    {data.trainingCourse ? data.trainingCourse.courseName: "null"}</td>
             </tr>
             <tr>
                 <td>Comments :</td>
