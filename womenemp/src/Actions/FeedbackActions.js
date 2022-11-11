@@ -32,6 +32,7 @@ export const addFeedback = (feedback)=>
 export const fetchfeedbacksByScheme= (schemeName)=> 
 async function (dispatch){
     const response = await WomenEmpApi.get(`/Feedback/Scheme/${schemeName}`)
+    console.log(response)
     dispatch({type : 'getFeedbacks', payload: response.data})
 };
 export const fetchfeedbacksByTraining= (courseName)=> 

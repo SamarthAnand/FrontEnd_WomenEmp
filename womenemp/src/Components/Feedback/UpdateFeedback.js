@@ -31,7 +31,7 @@ function UpdateFeedback(){
         console.log(formErrors)
         if(Object.keys(formErrors).length === 0 && isSubmit){
           dispatch(updateFeedback(formValues));
-          navigate("/home")
+          navigate("/searchfeedback")
           alert("Successfully updated")
           }
     },[formErrors])
@@ -94,7 +94,7 @@ function UpdateFeedback(){
                     <option>8</option>
                     <option>9</option>
                     <option>10</option>
-                </select>
+                </select><p className="error">{formErrors.schemeRating}</p>
                 
                     <label 
                     >Scheme Training Rating</label>
@@ -114,7 +114,7 @@ function UpdateFeedback(){
                     <option>8</option>
                     <option>9</option>
                     <option>10</option>
-                </select>
+                </select><p className="error">{formErrors.schemeTrainingRating}</p>
                 
                     <label >Overall Rating</label>
                 <select
@@ -133,9 +133,7 @@ function UpdateFeedback(){
                     <option>8</option>
                     <option>9</option>
                     <option>10</option>
-                </select>
-                
-            
+                </select><p className="error">{formErrors.overallRating}</p>
                   <label >Comments</label>
                 <textarea
                 required 
@@ -143,12 +141,11 @@ function UpdateFeedback(){
                 onChange={handleChange}
                 name="comment"
                 value={formValues.comment}></textarea>
-        
+                <p className="error">{formErrors.comment}</p>
                     <button role="button">Submit</button>
                 
                 </div>
             </form>
-            <div className="feedbackAfter" id='feedbackAfter'></div>
         </div></div>
     )
 }

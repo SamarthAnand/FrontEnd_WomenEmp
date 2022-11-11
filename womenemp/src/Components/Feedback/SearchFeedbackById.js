@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import FeedbackById from "./FeedbackById";
+import FeedbackBy from "./FeedbackBy";
 import FeedbackList from './FeedbackList';
 import { useSelector, useDispatch } from "react-redux";
 import { fetchFeedback} from "../../Actions/FeedbackActions";
+import Nav from "../Nav";
 
 function FeedbackbyId(){
     const feedbacks = useSelector((state) => state.allfeedbacks.feedbacks);
@@ -25,6 +26,8 @@ function FeedbackbyId(){
         e.preventDefault();
         setFormErrors(validate(feedbacks));
         setIsSubmit(true);
+        document.getElementById("feedid")
+        
 
     }
     const validate = (value)=>{
@@ -35,13 +38,14 @@ function FeedbackbyId(){
         return errors;
       }
     return(
-        <div>
-        {feedbacks &&<FeedbackById data={feedbacks} />}
+        <div><Nav/>
+        
         <div className="feedback">
         <input type="number" id="feedbackId" placeholder="Enter Feedback ID" required>
         </input>
         <button onClick={handleSubmit} >Search</button>
         </div>
+        <div id="feedid">{isSubmit && <FeedbackBy data={feedbacks} />}</div>
         </div>
         
     );

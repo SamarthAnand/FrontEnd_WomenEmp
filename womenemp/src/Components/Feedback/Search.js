@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import FeedbackList from './FeedbackList';
 import { useSelector, useDispatch } from "react-redux";
 import { fetchfeedbacksByScheme , fetchFeedback, fetchfeedbacksByTraining } from "../../Actions/FeedbackActions";
-import FeedbackbyId from "./FeedbackById";
+import FeedbackBy from "./FeedbackBy";
 import Nav from "../Nav";
 
 function Search(){
@@ -13,60 +13,64 @@ function Search(){
     const [isSubmit, setIsSubmit] = useState(false);
     const [formErrors, setFormErrors] = useState({});
     const search = document.getElementById("searchoption");
-
+    const feedbackId = document.getElementById("search");
+    const scheme = document.getElementById("search");
     // const handleChange = (e)=>{
     //     const schemeName=document.getElementById("schemeName");
     //   }
     useEffect(() => {
-        // if(isSubmit && schemeName.value)
-        // dispatch(fetchfeedbacksByScheme(schemeName.value))
-        // .then(()=>{
-        //     console.log(feedbacks)
-        // })
-        // .catch((err)=>{
-        //     alert("Feedback not found")
-        // })
-      }, []);
+        if(isSubmit && search.value ==="By ID" && feedbackId.value)
+        dispatch(fetchFeedback(feedbackId.value))
+        .then(()=>{
+            console.log(feedbacks)
+        })
+        .catch((err)=>{
+            alert("Feedback not found")
+        })
+        if(isSubmit && search.value ==="By Scheme Name" && scheme.value)
+            dispatch(fetchfeedbacksByScheme(scheme.value))
+            .then(()=>{
+                console.log(feedbacks)
+            })
+            .catch(()=>{
+                alert("Feedback for given scheme not present");
+            })
+
+      }, [formErrors]);
       const handleSubmit = (e)=>{
         e.preventDefault();
-        // setFormErrors(validate(feedbacks));
+        setFormErrors(validate(feedbacks));
         setIsSubmit(true);
-        if( search.value ==="By ID"){
-            const feedbackId = document.getElementById("search");
-            console.log(feedbackId.value)
-            dispatch(fetchFeedback(feedbackId.value))
-            console.log(feedbacks)
-            {feedbacks &&<FeedbackbyId data={feedbacks} />}
-        }
-        if( search.value ==="By Scheme Name"){
-            const scheme = document.getElementById("search");
-            console.log(scheme.value)
-            dispatch(fetchfeedbacksByScheme(scheme.value))
-            console.log(feedbacks)
-            feedbacks &&<FeedbackList data={feedbacks} title="Feedback by Scheme" />
-        }
-        if( search.value ==="By Training Course"){
-            const training = document.getElementById("search");
-            console.log(training.value)
-            dispatch(fetchfeedbacksByTraining(training.value))
-            console.log(feedbacks)
-            feedbacks &&<FeedbackList data={feedbacks} title="Feedback by Training" />
-        }
+        document.getElementById("feedid")
+       
+        // if(search && search.value ==="By Training Course"){
+        //     const training = document.getElementById("search");
+        //     console.log(training.value)
+        //     dispatch(fetchfeedbacksByTraining(training.value))
+        //     .then()
+        //     .catch(()=>{
+        //         alert("Feedback for given training course not present");
+        //     })
+        //     console.log(feedbacks)
+        //     feedbacks &&<FeedbackList data={feedbacks} title="Feedback by Training" />
+        // }
     }
-    // const validate = (value)=>{
-    //     const errors = {}
-    //     if(!value.schemeName){
-    //       errors.schemeName = "Please provide Scheme Name"
-    //     }
-    //     return errors;
-    //   }
+    const validate = (value)=>{
+        const errors = {}
+        if(!value.feedbackId){
+          errors.feedbackId = "Please provide Scheme Name"
+        }
+        if(!value.schemeName){
+            errors.schemeName = "Please provide Scheme Name"
+          }
+        return errors;
+      }
 
     return(
-        
         <div><Nav/>
-        {feedbacks &&<FeedbackList data={feedbacks} />}
         
-        <div className="feedback"><h2>Search Feedbacks</h2>
+        <div className="feedback">
+        <h2>Search Feedbacks</h2>
         <select
             required
             id="searchoption">
@@ -79,6 +83,7 @@ function Search(){
         </input>
         <button onClick={handleSubmit}>Search</button>
         </div>
+        <div id="feedid">{isSubmit && <FeedbackBy data={feedbacks} />}</div>
         </div>
         
     );

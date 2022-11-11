@@ -40,7 +40,7 @@ function Feedback(){
           .post(`http://localhost:8202/api/Feedback`,formValues)
           .then((res) => {
             alert("Feedback Submitted" );
-            navigate('/home');
+            navigate('/feedback/home');
           })
           .catch((arr)=>{
             alert("Feedback already present")
@@ -115,7 +115,8 @@ function Feedback(){
                     <option>8</option>
                     <option>9</option>
                     <option>10</option>
-                </select>
+                    
+                </select><p className="error">{formErrors.schemeRating}</p>
                 
                 
                     <label 
@@ -135,7 +136,7 @@ function Feedback(){
                     <option>8</option>
                     <option>9</option>
                     <option>10</option>
-                </select>
+                </select><p className="error">{formErrors.schemeTrainingRating}</p>
                 
                     <label >Overall Rating</label>
                 <select
@@ -153,16 +154,17 @@ function Feedback(){
                     <option>8</option>
                     <option>9</option>
                     <option>10</option>
-                </select>
+                </select><p className="error">{formErrors.overallRating}</p>
                 
             
                   <label >Comments</label>
+                  
                 <textarea
-                required 
+                 required
                 type="text"
                 onChange={handleChange}
                 name="comment"
-                placeholder="Add comments"></textarea>
+                placeholder="Add comments"></textarea><p className="error">{formErrors.comment}</p>
         
                     <button role="button">Submit</button>
                 
