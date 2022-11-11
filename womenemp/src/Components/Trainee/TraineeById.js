@@ -29,7 +29,7 @@ function TraineeById() {
   return (
     <div>
         <Nav />
-        <table class="table table-striped" style={{width:"500px", margin:"auto"}}>
+        <table class="table table-striped">
             <tbody>
             <tr>
                 <td>Trainee Id :</td>
@@ -73,11 +73,11 @@ function TraineeById() {
             </tr>
             <tr>
                 <td>Training Course :</td>
-                <td>{trainee.trainingCourse ? trainee.trainingCourse.courseName: ""}</td>
+                <td>{trainee.trainingCourse ? trainee.trainingCourse.courseName: "Null"}</td>
             </tr>
             <tr>
                 <td>Feedback : </td>
-                <td>{feed.comment ? feed.comment: ""}</td>
+                <td>{feed.comment ? feed.comment: "Null"}</td>
             </tr>
             </tbody>
         </table>
