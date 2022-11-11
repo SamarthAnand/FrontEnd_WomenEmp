@@ -15,7 +15,7 @@ export default function SchemesView({ schemes }) {
       <table className="table table-striped">
         <thead>
           <tr>
-
+            <th>ID</th>
             <th>Scheme Name</th>
             <th>Objective</th>
             <th>Eligibility</th>
@@ -29,7 +29,7 @@ export default function SchemesView({ schemes }) {
           {schemes &&
             schemes.map((scheme) => (
               <tr>
-
+                <td>{scheme.schemeId}</td>
                 <td>{scheme.schemeName}</td>
                 <td>{scheme.schemeObjective}</td>
                 <td>{scheme.schemeEligibility}</td>

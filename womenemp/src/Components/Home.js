@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import SchemesView from './Scheme/SchemesView';
 import Nav from './Nav'
@@ -7,22 +7,12 @@ import { fetchTrainee } from '../Actions/TraineeActions';
 import { fetchNgos } from '../Actions/NgoActions';
 import { Link, useNavigate } from 'react-router-dom';
 import NgosView from './NGO/NgosView';
-import Carousel from 'react-bootstrap/Carousel';
-import pic3 from "../images/pic3.jpeg";
-import pic1 from "../images/pic1.JPG";
-import pic2 from "../images/pic2.jpeg";
 
 function Home() {
   const dispatch = useDispatch();
   const schemes = useSelector((state) => state.allSchemes.schemes)
   const ngos = useSelector((state) => state.allNgos.ngos)
   const user = useSelector((state) => state.user)
-
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
   const navigate = useNavigate();
   const handleScheme = () => {
     document.getElementById('schemes').style.display = "block";
@@ -46,38 +36,6 @@ function Home() {
   return (
     <div>
       <Nav />
-      <Carousel activeIndex={index} onSelect={handleSelect} pauseOnHover={true}>
-        <Carousel.Item interval={1000} style={{ 'height': "300px" }} >
-          <img
-            style={{ 'height': "300px" }}
-            className="d-block w-100"
-            src={`${pic1}`}
-            alt="First slide"
-          />
-
-        </Carousel.Item>
-        <Carousel.Item interval={1000} style={{ 'height': "300px" }} >
-          <img
-            style={{ 'height': "300px" }}
-            className="d-block w-100"
-            src={`${pic2}`}
-            alt="Second slide"
-          />
-
-
-        </Carousel.Item>
-        <Carousel.Item interval={1000} style={{ 'height': "300px" }} >
-          <img
-            style={{ 'height': "300px" }}
-            className="d-block w-100"
-            src={`${pic3}`}
-            alt="Third slide"
-          />
-
-
-        </Carousel.Item>
-      </Carousel>
-
       <button className='buttonBlue' onClick={handleScheme}> View Schemes</button>
       <button className='buttonBlue' onClick={handleNgo}> View NGOs</button>
       <button className='buttonBlue' onClick={handleFeed}> Feedback</button>
