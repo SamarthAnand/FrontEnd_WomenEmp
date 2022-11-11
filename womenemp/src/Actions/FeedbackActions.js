@@ -12,9 +12,9 @@ export const fetchFeedbacks= ()=>
         console.log(response)
         dispatch({type : 'getFeedbacks', payload: response.data})
     };
-export const fetchFeedbackByUserId = (feedbackid)=> 
+export const fetchFeedbackByUserId = (userId)=> 
     async function (dispatch){
-        const response = await WomenEmpApi.get(`/Feedback/${feedbackid}`)
+        const response = await WomenEmpApi.get(`/Feedback/User/${userId}`)
         console.log(response)
         dispatch({type : 'getFeedback', payload: response.data})
     };

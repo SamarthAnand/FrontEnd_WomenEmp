@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "../../Style/Course.css";
-
+import NavAdmin from "../NavAdmin";
 
 function AllCourses() {
   const[courses,setCourses] = useState([])
@@ -25,6 +25,7 @@ const deleteCourse= async (trainingCourseId)=> {
   return (
     
     <div >
+      <NavAdmin />
       <header className='back2'>
           <h1 className='heading2'>Courses Available are:</h1></header>
         <div className='py-4'>

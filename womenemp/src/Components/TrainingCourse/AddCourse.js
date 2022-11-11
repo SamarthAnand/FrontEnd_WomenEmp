@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addTrainingCourse } from "../../Actions/TrainingCourseActions";
 import {useNavigate} from 'react-router-dom';
 import "../../Style/Course.css";
+import NavAdmin from "../NavAdmin"
 
 function AddCourse() {
   const dispatch = useDispatch()
@@ -54,6 +55,7 @@ function AddCourse() {
     }
     return (
       <div className='page'>
+        <NavAdmin />
         <header className='back'>
           <h1 className='heading'>New Course Form :</h1></header>
       <div className='formBlock'>
