@@ -12,9 +12,6 @@ function Admin() {
           <Link to="/admin/trainees" className="link-text ">View All Trainees</Link>
         </div>
         <div>
-          <Link to="/admin/traineeById" className="link-text ">View Trainee By ID</Link>
-        </div>
-        <div>
           <Link to="/admin/addcourse" className="link-text">Add Course</Link>
         </div>
         {/* <div>

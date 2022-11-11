@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import FeedbackById from "./FeedbackById";
+import FeedbackBy from "./FeedbackBy";
 import FeedbackList from './FeedbackList';
 import { useSelector, useDispatch } from "react-redux";
 import { fetchFeedback } from "../../Actions/FeedbackActions";

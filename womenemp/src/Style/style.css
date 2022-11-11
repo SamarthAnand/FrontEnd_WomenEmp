@@ -26,6 +26,9 @@
     display: block;
     text-align: left;
 }
+.feedback h2{
+  margin-bottom: 20px;
+}
 
 .feedback button{
     

@@ -28,8 +28,8 @@ import UpdateFeedback from "./Components/Feedback/UpdateFeedback";
 import FeedbackbyId from "./Components/Feedback/SearchFeedbackById";
 import Feedbackbytraining from "./Components/Feedback/SearchFeedbackByTraining";
 import FeedbackHome from "./Components/Feedback/FeedbackHome";
-import TraineeByIdAdmin from "./Components/Trainee/TraineeByIdAdmin";
-import TraineeByIdAdminView from "./Components/Trainee/TraineeByIdAdminView";
+import Search from "./Components/Feedback/Search";
+
 
 function App() {
   return (
@@ -47,8 +47,6 @@ function App() {
           <Route path="/admin/search-scheme-by-type/:schemeType" element={<SearchResults />} />
 
           <Route path="/admin/trainees" element={<Trainees />} />
-          <Route path="/admin/traineeById" element={<TraineeByIdAdmin />} />
-          <Route path="/admin/traineeById/:traineeId" element={<TraineeByIdAdminView />} />
           <Route path="/signup" element={<SignUp />} />
 
           <Route path="/admin/addcourse" element={<AddCourse />} />
@@ -66,6 +64,7 @@ function App() {
           <Route path="/feedback/feedbackbyscheme" element={<Feedbackbyscheme />} />
           <Route path="/feedback/feedbackbytraining" element={<Feedbackbytraining />} />
           <Route path="/feedback/feedbackbyid" element={<FeedbackbyId />} />
+          <Route path="/searchfeedback" element={<Search />} />
 
         </Routes>
 

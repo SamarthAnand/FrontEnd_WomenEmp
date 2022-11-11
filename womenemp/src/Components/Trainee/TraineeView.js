@@ -39,7 +39,7 @@ function TraineeView({ trainees }) {
               <td>
                 {trainee.trainingCourse
                   ? trainee.trainingCourse.trainingCourseId
-                  : ""}
+                  : "null"}
               </td>
               {/* <td>{trainee.feedback ? trainee.feedback.comment : "null"}</td> */}
             </tr>
