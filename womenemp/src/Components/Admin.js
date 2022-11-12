@@ -35,6 +35,9 @@ function Admin() {
         <div>
           <Link to="/admin/viewallfeedback" className="link-text">View all feedback</Link>
         </div>
+        <div>
+          <Link to="/admin/search-scheme" className="link-text ">Search Schemes</Link>
+        </div>
 
       </div>
     </div>

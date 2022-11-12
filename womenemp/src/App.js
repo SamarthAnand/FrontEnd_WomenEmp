@@ -15,13 +15,13 @@ import SearchResult from "./Components/TrainingCourse/SearchResult";
 import SearchResults from "./Components/Scheme/SearchResults";
 import Scheme from "./Components/Scheme/Scheme";
 import SchemesList from "./Components/Scheme/SchemesList";
+import SearchScheme from "./Components/Scheme/SearchScheme";
 import TraineeById from "./Components/Trainee/TraineeById";
 import Feedback from "./Components/Feedback/AddFeedback";
 import ViewAllFeedback from "./Components/Feedback/ViewAllFeedback";
 
 import TraineeUpdate from "./Components/Trainee/TraineeUpdate";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import SearchSchemeByType from "./Components/Scheme/SearchSchemeByType";
 import UpdateFeedback from "./Components/Feedback/UpdateFeedback";
 import FeedbackHome from "./Components/Feedback/FeedbackHome";
 import Search from "./Components/Feedback/Search";
@@ -41,7 +41,7 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/addscheme" element={<Scheme />} />
           <Route path="/admin/schemes" element={<SchemesList />} />
-          <Route path="/admin/search-scheme" element={<SearchSchemeByType />} />
+          <Route path="/admin/search-scheme" element={<SearchScheme />} />
           <Route path="/admin/search-scheme-by-type/:schemeType" element={<SearchResults />} />
 
           <Route path="/admin/trainees" element={<Trainees />} />
