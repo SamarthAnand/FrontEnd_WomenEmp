@@ -13,14 +13,8 @@ function FeedbackHome() {
   const updateFeed = () => {
     navigate("/updatefeedback")
   }
-  const handleFeedbyId = () => {
-    navigate("/feedback/feedbackbyid")
-  }
-  const handleFeedbyScheme = () => {
-    navigate("/feedback/feedbackbyscheme")
-  }
-  const handleFeedbyTraining = () => {
-    navigate("/feedback/feedbackbytraining")
+  const handleSearch = () => {
+    navigate("/searchfeedback")
   }
   useEffect(() => {
     // dispatch(fetchTrainee(user.userId))
