@@ -3,6 +3,8 @@ import FeedbackBy from "./FeedbackBy";
 import FeedbackList from './FeedbackList';
 import { useSelector, useDispatch } from "react-redux";
 import { fetchFeedback } from "../../Actions/FeedbackActions";
+import FeedbackById from "./FeedbackById";
+
 
 function FeedbackbyId() {
   const feedbacks = useSelector((state) => state.allfeedbacks.feedbacks);
