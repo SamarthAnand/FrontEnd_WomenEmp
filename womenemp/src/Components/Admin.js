@@ -4,7 +4,7 @@ import NavAdmin from "./NavAdmin";
 
 function Admin() {
   return (
-    <div>
+    <div >
       <NavAdmin />
       <div className="admin">
         <h1>Admin Page</h1>

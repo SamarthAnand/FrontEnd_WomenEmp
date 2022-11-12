@@ -28,12 +28,13 @@ const deleteCourse= async (trainingCourseId)=> {
       <NavAdmin />
       <header className='back2'>
           <h1 className='heading2'>Courses Available are:</h1></header>
-        <div className='py-4'>
+        <div className='py-4 pos'>
         <table className ="table table-hover border shadow table-striped">
         <thead>
     <tr className="tableheadcolor">
       <th scope="col">Id</th>
       <th scope="col">Course Name</th>
+      <th scope="col">Completion Status</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
@@ -43,6 +44,7 @@ const deleteCourse= async (trainingCourseId)=> {
             <tr>
         <th className="rowstyle" scope="row" key={course.trainingCourseId}>{course.trainingCourseId}</th>
         <td className="rowstyle">{course.courseName}</td>
+        <td className="rowstyle">{course.courseCompletionStatus}</td>
         <td > 
             <Link to={`/admin/allcourses/coursedetails/${course.trainingCourseId}`} className="btn btn-primary border shadow mx-2">View</Link>
             <Link to ={`/admin/updatecourse/${course.trainingCourseId}`} className="btn btn-outline-primary shadow mx-2">Update</Link>

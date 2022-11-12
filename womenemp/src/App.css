@@ -65,7 +65,7 @@
   color: white;
 }
 .admin{
-  background-color: rgb(211, 233, 236);
+  background-color: rgb(30, 211, 235);
   /* margin: auto; */
 }
 .admin div{
@@ -119,3 +119,10 @@
 .textcolor{
   color:azure;
 }
+.pos{
+  display: block;
+  width: 1050px;
+  margin:auto;
+
+}
+
