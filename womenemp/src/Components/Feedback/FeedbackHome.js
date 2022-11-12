@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Nav from '../Nav';
-import "../../Style/feedhome.scss";
+import "../../Style/feedhome.css";
 import { Link, useNavigate } from 'react-router-dom';
 import { fetchTrainee } from '../../Actions/TraineeActions';
 import { useDispatch, useSelector } from 'react-redux';
@@ -36,33 +36,20 @@ function FeedbackHome() {
   }, [])
   // console.log(schemes)
   return (
-    <div class="feedhome">
-        <Nav /> 
-        <div class="homebutt"><h3 style={{ color:'lightgrey'}}>Your Feedback matters ...</h3>
-        <div class="button2" onClick={handleFeed}>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          Add Feedback
-        </div>
-       
-        <div class="button2" onClick={updateFeed}>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          Update Feedback
-        </div>
-        <div class="button2" onClick={handleSearch}>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          Search Feedback
-        </div></div>
+    
+    <div>
+        <Nav /> <h3 style={{ color:'lightgrey'}}>Your Feedback matters ...</h3>
         
-    </div>
+        <div class="center">
+        <div class="btn-1" >
+          <a href=""><span onClick={handleFeed}>Add Feedback</span></a>
+        </div>
+        <div class="btn-1" >
+          <a href=""><span onClick={updateFeed}>Update Feedback</span></a>
+       </div>
+        <div class="btn-1" >
+          <a href=""><span onClick={handleSearch}>Search Feedback</span></a>
+    </div></div></div>
   )
 }
 

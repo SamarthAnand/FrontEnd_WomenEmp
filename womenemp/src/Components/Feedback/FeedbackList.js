@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import "../../Style/style.css";
 const FeedbackList =({data,title})=>{
-    return (<div className="list-body"><h1>{title}</h1>
+    return (<div className="feedhome">
+    <div className="list-body"><h2>All Feedbacks</h2>
         <div className="tbl-header">
                         <table className="list-table">
                         <thead>
@@ -41,7 +42,7 @@ const FeedbackList =({data,title})=>{
                 </div>
             ))}
         
-        </div></div>
+        </div></div></div>
     )
 }
 export default FeedbackList;
