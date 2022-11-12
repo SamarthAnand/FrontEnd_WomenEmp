@@ -13,13 +13,14 @@ function Feedback(){
     
     const dispatch= useDispatch();
     const currUser = useSelector((state) => state.user);
+    const trainee = useSelector((state) => state.trainee)
     // const trainee = useSelector((state) => state.trainee)
     // const feed = useSelector((state) => state.feedback)
     // const schemes = useSelector((state) => state.allSchemes.schemes);
     const d = new Date().toISOString().split("T")[0];
     const navigate = useNavigate();
     const [isSubmit, setIsSubmit] = useState(false);
-    const initialValues = {feedBackId:100,schemeRating:null,schemeTrainingRating:null,overallRating:null,comment:"",date:d};
+    const initialValues = {feedBackId:100,schemeRating:null,schemeTrainingRating:null,overallRating:null,user:{},trainingCourse:{},comment:"",date:d};
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
 
@@ -33,13 +34,20 @@ function Feedback(){
         setFormErrors(validate(formValues));
         setIsSubmit(true)
     }
+
     const getScheme =()=>{
       dispatch(fetchSchemes())
     }
     useEffect(()=>{
         console.log(formErrors)
+        dispatch(fetchTrainee(currUser.userId))
+        // .then(console.log(trainee))
         if(Object.keys(formErrors).length === 0 && isSubmit){
-          // formValues.user = currUser;
+          // console.log(currUser);
+          formValues.user = currUser;
+          formValues.trainingCourse= trainee.trainingCourse;
+
+          console.log(formValues)
            axios
           .post(`http://localhost:8202/api/Feedback`,formValues)
           .then((res) => {
@@ -74,7 +82,7 @@ function Feedback(){
         return errors;
       }
     
-    return(<div> <Nav/>
+    return(<div className="feedhome"> <Nav/>
         <div className="feedback">
           
             {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
