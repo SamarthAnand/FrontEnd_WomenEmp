@@ -3,11 +3,11 @@ import { useDispatch } from 'react-redux';
 import { updateTrainee } from '../../Actions/TraineeActions';
 import { useSelector } from 'react-redux';
 
-function NgosView({ngos}) {
+function NgosView({ ngos }) {
 
-    const dispatch = useDispatch();
-    const trainee = useSelector((state) => state.trainee);
-    const handleClick = (course) => {
+  const dispatch = useDispatch();
+  const trainee = useSelector((state) => state.trainee);
+  const handleClick = (course) => {
     trainee.trainingCourse = course;
     dispatch(updateTrainee(trainee));
     alert("successfully enrolled");
@@ -18,7 +18,7 @@ function NgosView({ngos}) {
       <table className="table table-striped">
         <thead>
           <tr>
-            <th>NGO ID</th>
+
             <th>Name</th>
             <th>Location</th>
             <th>Type</th>
@@ -34,7 +34,7 @@ function NgosView({ngos}) {
           {ngos &&
             ngos.map((ngo) => (
               <tr>
-                <td>{ngo.ngoId}</td>
+
                 <td>{ngo.ngoName}</td>
                 <td>{ngo.ngoLocation}</td>
                 <td>{ngo.ngoType}</td>

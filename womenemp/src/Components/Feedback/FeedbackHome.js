@@ -7,29 +7,26 @@ import { Link, useNavigate } from 'react-router-dom';
 function FeedbackHome() {
   const navigate = useNavigate();
 
-  const handleFeed = ()=>{
+  const handleFeed = () => {
     navigate("/feedback")
   }
-  const updateFeed = ()=>{
+  const updateFeed = () => {
     navigate("/updatefeedback")
   }
-  const handleFeedbyId = ()=>{
+  const handleFeedbyId = () => {
     navigate("/feedback/feedbackbyid")
   }
-  const handleFeedbyScheme = ()=>{
+  const handleFeedbyScheme = () => {
     navigate("/feedback/feedbackbyscheme")
   }
-  const handleFeedbyTraining = ()=>{
+  const handleFeedbyTraining = () => {
     navigate("/feedback/feedbackbytraining")
   }
-  const handleSearch = ()=>{
-    navigate("/searchfeedback")
-  }
-  useEffect(()=>{
+  useEffect(() => {
     // dispatch(fetchTrainee(user.userId))
     // dispatch(fetchSchemes())
     // dispatch(fetchNgos());
-  },[])
+  }, [])
   // console.log(schemes)
   return (
     <div>

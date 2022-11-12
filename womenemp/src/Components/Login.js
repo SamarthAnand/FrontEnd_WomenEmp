@@ -102,8 +102,8 @@ function Login() {
             <button type='submit' className="buttonBlue">Sign In</button>
           </div>
           <div id='loginAfter'></div>
-        </form>
         <Link to='/signup'>SignUp</Link>
+        </form>
       </div>
     );
 }
