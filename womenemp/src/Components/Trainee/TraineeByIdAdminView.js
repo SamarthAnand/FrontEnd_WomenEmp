@@ -1,25 +1,28 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchTrainee } from "../../Actions/TraineeActions";
 import NavAdmin from "../NavAdmin";
 
 function TraineeByIdAdminView() {
   const { traineeId } = useParams();
-  console.log(traineeId)
+//   console.log(traineeId)
   const [trainee, setTrainee] = useState({});
-  const dispatch = useDispatch();
   useEffect(() => {
     loadTrainee();
   }, []);
 
   const loadTrainee = async () => {
-    const result = await axios.get(`http://localhost:8202/api/Trainee/${traineeId}`);
-    setTrainee(result.data);
+    axios
+    .get(`http://localhost:8202/api/Trainee/${traineeId}`)
+    .then((data) => setTrainee(data.data))
+    .catch((error) => {
+        document.getElementById("traineeById").innerHTML =`
+        ${error.response.data.errorMessage}
+        `
+    })
   };
   return (
-    <div>
+    <div id="traineeById">
       <NavAdmin />
       <table
         class="table table-striped"

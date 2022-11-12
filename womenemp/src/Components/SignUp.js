@@ -45,6 +45,8 @@ function SignUp() {
     const errors = {};
     if (!value.userName) {
       errors.userName = "Please provide username";
+    }else if(!value.userName.match("^[a-zA-Z0-9]+( [A-Za-z0-9]+)*$")){
+      errors.userName = "Invalid username"
     }
     if (!value.password) {
       errors.password = "Please provide password";
@@ -52,6 +54,8 @@ function SignUp() {
       errors.password = "Password must be more than 4 characters";
     } else if (value.password.length > 10) {
       errors.password = "Password cannot exceed more than 10 characters";
+    } else if (!value.password.match("^[a-zA-Z0-9$@]+$")){
+      errors.password = "Invalid Password"
     }
     if (!value.firstName) {
       errors.firstName = "Please provide firstname";

@@ -36,11 +36,13 @@ function Home() {
   return (
     <div>
         <Nav />
-        <button className='buttonBlue' onClick={handleScheme}> View Schemes</button>
-        <button className='buttonBlue' onClick={handleNgo}> View NGOs</button>
-        <button className='buttonBlue' onClick={handleFeed}> Feedback</button>
-        <div id='schemes'><SchemesView schemes={schemes} /></div>
-        <div id='ngos'><NgosView ngos={ngos} /></div>
+        <div id='home'>
+          <button className='buttonBlue' onClick={handleScheme}> View Schemes</button>
+          <button className='buttonBlue' onClick={handleNgo}> View NGOs</button>
+          <button className='buttonBlue' onClick={handleFeed}> Feedback</button>
+          <div id='schemes'><SchemesView schemes={schemes} /></div>
+          <div id='ngos'><NgosView ngos={ngos} /></div>
+        </div>
     </div>
   )
 }

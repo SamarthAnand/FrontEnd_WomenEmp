@@ -4,19 +4,23 @@ import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchSchemes } from "../../Actions/SchemeActions";
+import { fetchFeedbackByUserId } from "../../Actions/FeedbackActions";
+import { fetchTrainee, updateTrainee } from "../../Actions/TraineeActions";
  //import Select from 'react-select';
 
 function Feedback(){ 
     
     const dispatch= useDispatch();
     const currUser = useSelector((state) => state.user);
+    // const trainee = useSelector((state) => state.trainee)
+    // const feed = useSelector((state) => state.feedback)
+    // const schemes = useSelector((state) => state.allSchemes.schemes);
     const d = new Date().toISOString().split("T")[0];
     const navigate = useNavigate();
     const [isSubmit, setIsSubmit] = useState(false);
     const initialValues = {feedBackId:100,schemeRating:null,schemeTrainingRating:null,overallRating:null,user:{},schemeName:"",comment:"",date:d};
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
-    const schemes = useSelector((state) => state.allSchemes.schemes);
 
   
     const handleChange = (e)=>{
@@ -39,6 +43,10 @@ function Feedback(){
           .post(`http://localhost:8202/api/Feedback`,formValues)
           .then((res) => {
             alert("Feedback Submitted");
+            // dispatch(fetchFeedbackByUserId(currUser.userId))
+            // dispatch(fetchTrainee(currUser.userId))
+            // trainee.feedback = feed
+            // dispatch(updateTrainee(trainee))
             navigate('/home');
           })
           .catch((arr)=>{
