@@ -8,8 +8,6 @@ import { fetchNgos } from '../Actions/NgoActions';
 import { Link, useNavigate } from 'react-router-dom';
 import NgosView from './NGO/NgosView';
 import Carousel from 'react-bootstrap/Carousel';
-import pic3 from "../images/pic3.jpeg";
-import pic2 from "../images/pic2.jpeg";
 
 function Home() {
   const dispatch = useDispatch();
@@ -50,7 +48,7 @@ function Home() {
         <Carousel.Item style={{ 'height': "300px" }}>
           <img
             className="d-block w-100"
-            src={`${pic3}`}
+            src={`https://img.freepik.com/free-vector/flat-hand-drawn-international-women-s-day-illustration_23-2148863944.jpg?w=2000`}
             alt="First slide"
             style={{ 'height': "300px" }}
           />
@@ -59,7 +57,7 @@ function Home() {
         <Carousel.Item style={{ 'height': "300px" }}>
           <img
             className="d-block w-100"
-            src={`${pic3}`}
+            src={`https://media.istockphoto.com/photos/happy-confident-asian-woman-raising-her-hands-up-relax-on-summer-picture-id1334123325?b=1&k=20&m=1334123325&s=170667a&w=0&h=OnSoZn8-zQwKzErKrkctlnCe6yOLrhbMCyZHJJ03Leo=`}
             alt="Second slide"
             style={{ 'height': "300px" }}
           />
@@ -69,7 +67,7 @@ function Home() {
         <Carousel.Item style={{ 'height': "300px" }}>
           <img
             className="d-block w-100"
-            src={`${pic3}`}
+            src={`https://www.kristendarcy.com/wp-content/uploads/2015/03/women-empowerment-quotes-hd-wallpaper-17.jpg`}
             alt="Third slide"
             style={{ 'height': "300px" }}
           />

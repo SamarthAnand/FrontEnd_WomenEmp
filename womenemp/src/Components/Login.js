@@ -65,7 +65,7 @@ function Login() {
       return errors;
     }
     return (
-      <div className="Login">
+      <div className="Login" data-testid="loginTest">
         {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
           <div className="ui message success">Signed in successfully</div>
         ) : (
