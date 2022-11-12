@@ -1,17 +1,21 @@
 import React from 'react'
 import { useEffect, useState } from "react"
 import axios from 'axios';
-import { Navigate, useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from "react-redux";
+
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
 import NavAdmin from '../NavAdmin';
+import { addSchemes } from '../../Actions/SchemeActions';
 
 
 function Scheme() {
     //  const [date, setDate] = useState(new Date());
+    const dispatch = useDispatch()
+    const navigate = useNavigate();
     const initialValues = {
         schemeName: "", schemeType: "", schemeEligibility: "", launchDate: "", schemeObjective: ""
     };
@@ -31,19 +35,24 @@ function Scheme() {
     useEffect(() => {
         console.log(formErrors)
         if (Object.keys(formErrors).length === 0 && isSubmit) {
-            axios
-                .post(`http://localhost:8202/api/Schemes`, formValues)
-                .then((data) => {
-                    document.getElementById('submitAfter').innerHTML = 'Scheme added Successfully'
-                    console.log(data.data)
+            dispatch(addSchemes((formValues)));
+            alert("Scheme Added!")
+            navigate(`/admin/schemes`)
 
-                    Navigate('/schemes')
-                })
-                .catch((error) => {
-                    console.log('====================================');
-                    console.log(error);
-                    console.log('====================================');
-                });
+            // if (Object.keys(formErrors).length === 0 && isSubmit) {
+            //     axios
+            //         .post(`http://localhost:8202/api/Schemes`, formValues)
+            //         .then((data) => {
+            //             document.getElementById('submitAfter').innerHTML = 'Scheme added Successfully'
+            //             console.log(data.data)
+
+            //             Navigate('/schemes')
+            //         })
+            //         .catch((error) => {
+            //             console.log('====================================');
+            //             console.log(error);
+            //             console.log('====================================');
+            //         });
         }
     }, [formErrors])
 
@@ -69,59 +78,61 @@ function Scheme() {
         return errors;
     }
     return (
-        <div>
+        <div data-testid = "schemeTest">
             <NavAdmin />
-        
-        <Form onSubmit={handleSubmit} className="container">
-            {/*Object.keys(formErrors).length === 0 && isSubmit ? (
+
+            <Form onSubmit={handleSubmit} className="container">
+                {/*Object.keys(formErrors).length === 0 && isSubmit ? (
                 <div className="ui message success">Signed in successfully</div>
             ) : (
                 <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
             )*/}
-            <Form.Group as={Row} className="mb-3" controlId="schemeName">
-                <Form.Label column sm="2">Scheme Name</Form.Label>
-                <Form.Control type="text" placeholder="Scheme Name" name="schemeName"
-                    onChange={handleChange} />
-            </Form.Group>
-            <p>{formErrors.schemeName}</p>
-            <Form.Group as={Row} className="mb-3" controlId="schemeType">
-                <Form.Label column sm="2">Scheme Type</Form.Label>
-                <Form.Control type="text" placeholder="Scheme Type"
-                    name="schemeType"
-                    onChange={handleChange} />
+                <Form.Group as={Row} className="mb-3" controlId="schemeName">
+                    <Form.Label column sm="2">Scheme Name</Form.Label>
+                    <Form.Control type="text" placeholder="Scheme Name" name="schemeName"
+                        onChange={handleChange} />
+                </Form.Group>
+                <p>{formErrors.schemeName}</p>
+                <Form.Group as={Row} className="mb-3" controlId="schemeType">
+                    <Form.Label column sm="2">Scheme Type</Form.Label>
+                    <Form.Control type="text" placeholder="Scheme Type"
+                        name="schemeType"
+                        onChange={handleChange} />
 
-            </Form.Group>
-            <p>{formErrors.schemeType}</p>
-            <Form.Group as={Row} className="mb-3" controlId="schemeObjective">
-                <Form.Label column sm="2">Scheme Objective</Form.Label>
-                <Form.Control type="text" placeholder="Scheme Objective"
-                    name="schemeObjective"
-                    onChange={handleChange} />
+                </Form.Group>
+                <p>{formErrors.schemeType}</p>
+                <Form.Group as={Row} className="mb-3" controlId="schemeObjective">
+                    <Form.Label column sm="2">Scheme Objective</Form.Label>
+                    <Form.Control type="text" placeholder="Scheme Objective"
+                        name="schemeObjective"
+                        onChange={handleChange} />
 
-            </Form.Group>
-            <p>{formErrors.schemeObjective}</p>
-            <Form.Group as={Row} className="mb-3" controlId="schemeEligibility">
-                <Form.Label column sm="2">Scheme Eligibility</Form.Label>
-                <Form.Control type="text" placeholder="Scheme Eligibility"
-                    name="schemeEligibility"
-                    onChange={handleChange} />
+                </Form.Group>
+                <p>{formErrors.schemeObjective}</p>
+                <Form.Group as={Row} className="mb-3" controlId="schemeEligibility">
+                    <Form.Label column sm="2">Scheme Eligibility</Form.Label>
+                    <Form.Control type="text" placeholder="Scheme Eligibility"
+                        name="schemeEligibility"
+                        onChange={handleChange} />
 
-            </Form.Group>
-            <p>{formErrors.schemeEligibility}</p>
-            <Form.Group as={Row} >
-                <Form.Label column sm="2">Scheme Launch Date </Form.Label>
+                </Form.Group>
+                <p>{formErrors.schemeEligibility}</p>
+                <Form.Group as={Row} >
+                    <Form.Label column sm="2">Scheme Launch Date </Form.Label>
 
-                <Form.Control
-                    type="date"
-                    name="launchDate"
-                    placeholder="DateRange"
-                    onChange={handleChange}
-                />
-            </Form.Group>
-            <p>{formErrors.launchDate}</p>
-            <Button variant="primary" type="submit">Submit</Button>{' '}
-            <div id='submitAfter'></div>
-        </Form>
+                    <Form.Control
+                        type="date"
+                        name="launchDate"
+                        max={new Date().toISOString().split("T")[0]}
+                        placeholder="DateRange"
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <p>{formErrors.launchDate}</p>
+
+                <Button variant="primary" type="submit">Submit</Button>{' '}
+                <div id='submitAfter'></div>
+            </Form>
         </div>
     );
 

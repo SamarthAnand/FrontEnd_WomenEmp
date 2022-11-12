@@ -35,7 +35,7 @@ export default function SchemesView({ schemes }) {
                 <td>{scheme.schemeEligibility}</td>
                 <td>{scheme.launchDate}</td>
                 <td>{scheme.schemeType}</td>
-                <td>{scheme.trainingCourse.courseName}</td>
+                <td>{scheme.trainingCourse ? scheme.trainingCourse.courseName : "--"}</td>
                 <td>
                   <button
                     type="button" class="btn btn-success"

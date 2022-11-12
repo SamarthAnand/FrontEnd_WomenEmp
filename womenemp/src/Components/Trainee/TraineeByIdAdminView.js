@@ -22,7 +22,7 @@ function TraineeByIdAdminView() {
     })
   };
   return (
-    <div id="traineeById">
+    <div id="traineeById" data-testid = "traineeviewtest">
       <NavAdmin />
       <table
         class="table table-striped"

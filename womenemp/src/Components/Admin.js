@@ -4,7 +4,7 @@ import NavAdmin from "./NavAdmin";
 
 function Admin() {
   return (
-    <div>
+    <div >
       <NavAdmin />
       <div className="admin">
         <h1>Admin Page</h1>
@@ -34,6 +34,9 @@ function Admin() {
         </div>
         <div>
           <Link to="/admin/viewallfeedback" className="link-text">View all feedback</Link>
+        </div>
+        <div>
+          <Link to="/admin/search-scheme" className="link-text ">Search Schemes</Link>
         </div>
 
       </div>

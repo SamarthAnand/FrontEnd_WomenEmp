@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 
-
 import { useSelector, useDispatch } from "react-redux";
-import { fetchfeedbacksByScheme , fetchFeedback, fetchfeedbacksByTraining } from "../../Actions/FeedbackActions";
+import { fetchfeedbacksByScheme, fetchFeedback, fetchfeedbacksByTraining } from "../../Actions/FeedbackActions";
 import FeedbackBy from "./FeedbackBy";
 import Nav from "../Nav";
 
-function Search(){
+function Search() {
     const feedbacks = useSelector((state) => state.allfeedbacks.feedbacks);
-    const dispatch= useDispatch();
-    const schemeName= document.getElementById("schemeName");
+    const dispatch = useDispatch();
+    const schemeName = document.getElementById("schemeName");
     const [isSubmit, setIsSubmit] = useState(false);
     const [formErrors, setFormErrors] = useState({});
     const search = document.getElementById("searchoption");
@@ -52,7 +51,7 @@ function Search(){
         setIsSubmit(true);
         document.getElementById("feedid")
     }
-    const validate = (value)=>{
+    const validate = (value) => {
         const errors = {}
         if(!value.feedBackId){
           errors.feedBackId = "Please provide details"
@@ -64,7 +63,7 @@ function Search(){
             errors.training = "Please provide details"
           }
         return errors;
-      }
+    }
 
     return(
         <div className="feedhome"><Nav/>
@@ -86,10 +85,10 @@ function Search(){
         </div>
         {/* <div id="feedid">{feedbacks && isSubmit && <FeedbackBy data={feedbacks} />}
         </div> */}
-            <div id="feedid"> {isSubmit && (item ? (<FeedbackBy data={item} />) :(<FeedbackBy data={feedbacks} />)) }</div>
+            <div id="feedid"> {isSubmit && (item ? (<FeedbackBy data={item} />) : (<FeedbackBy data={feedbacks} />))}</div>
         </div>
 
-        
+
     );
 }
 export default Search;

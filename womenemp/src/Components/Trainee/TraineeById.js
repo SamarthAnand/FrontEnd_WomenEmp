@@ -33,7 +33,7 @@ function TraineeById() {
     }
     console.log(feed)
   return (
-    <div>
+    <div data-testid="traineeById">
         <Nav />
         <table class="table table-striped" style={{width:"500px",margin:"auto"}}>
             <tbody>

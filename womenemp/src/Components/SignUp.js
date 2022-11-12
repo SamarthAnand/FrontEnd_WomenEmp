@@ -89,7 +89,7 @@ function SignUp() {
   };
 
   return (
-    <div>
+    <div data-testid="signUpTest">
         {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
           <div className="ui message success">Signed in successfully</div>
         ) : (
