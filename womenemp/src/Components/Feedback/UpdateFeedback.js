@@ -31,7 +31,7 @@ function UpdateFeedback(){
         console.log(formErrors)
         if(Object.keys(formErrors).length === 0 && isSubmit){
           dispatch(updateFeedback(formValues));
-          navigate("/searchfeedback")
+          navigate("/feedback/home")
           alert("Successfully updated")
           }
     },[formErrors])

@@ -19,7 +19,7 @@ function Feedback(){
     const d = new Date().toISOString().split("T")[0];
     const navigate = useNavigate();
     const [isSubmit, setIsSubmit] = useState(false);
-    const initialValues = {feedBackId:100,schemeRating:null,schemeTrainingRating:null,overallRating:null,user:{},scheme:{},comment:"",date:d};
+    const initialValues = {feedBackId:100,schemeRating:null,schemeTrainingRating:null,overallRating:null,comment:"",date:d};
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
 
@@ -39,7 +39,7 @@ function Feedback(){
     useEffect(()=>{
         console.log(formErrors)
         if(Object.keys(formErrors).length === 0 && isSubmit){
-          formValues.user = currUser;
+          // formValues.user = currUser;
            axios
           .post(`http://localhost:8202/api/Feedback`,formValues)
           .then((res) => {
@@ -52,7 +52,7 @@ function Feedback(){
           })
           .catch((arr)=>{
             alert("Feedback already present")
-            navigate('/home');
+            navigate('/feedback/home');
           })
       }
     },[formErrors])

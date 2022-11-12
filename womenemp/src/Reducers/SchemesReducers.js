@@ -22,7 +22,7 @@ export const selectedSchemeReducer = (state = {}, action) => {
     switch (action.type) {
         case 'getScheme':
             return { ...state, ...action.payload }
-        case 'updateScheme':
+        case 'updateSchemes':
             return { ...state, ...action.payload }
         case 'deleteScheme':
             return {}

@@ -15,6 +15,8 @@ function Search(){
     const search = document.getElementById("searchoption");
     const feedbackId = document.getElementById("search");
     const scheme = document.getElementById("search");
+    const training = document.getElementById("search");
+    const item = feedbacks[0];
     // const handleChange = (e)=>{
     //     const schemeName=document.getElementById("schemeName");
     //   }
@@ -30,30 +32,36 @@ function Search(){
         if(isSubmit && search.value ==="By Scheme Name" && scheme.value)
             dispatch(fetchfeedbacksByScheme(scheme.value))
             .then(()=>{
-                console.log(feedbacks)
+                console.log(item)
             })
             .catch(()=>{
                 alert("Feedback for given scheme not present");
             })
-
+        if(isSubmit && search.value ==="By Training Course"){
+            dispatch(fetchfeedbacksByTraining(training.value))
+            .then(console.log(item))
+            .catch(()=>{
+                alert("Feedback for given training course not present");
+            })
+        }
       }, [formErrors]);
       const handleSubmit = (e)=>{
         e.preventDefault();
         setFormErrors(validate(feedbacks));
         setIsSubmit(true);
         document.getElementById("feedid")
+        
+        
+            
+            
+
+        
+        
+
+        
+
        
-        // if(search && search.value ==="By Training Course"){
-        //     const training = document.getElementById("search");
-        //     console.log(training.value)
-        //     dispatch(fetchfeedbacksByTraining(training.value))
-        //     .then()
-        //     .catch(()=>{
-        //         alert("Feedback for given training course not present");
-        //     })
-        //     console.log(feedbacks)
-        //     feedbacks &&<FeedbackList data={feedbacks} title="Feedback by Training" />
-        // }
+        
     }
     const validate = (value)=>{
         const errors = {}
@@ -83,8 +91,11 @@ function Search(){
         </input>
         <button onClick={handleSubmit}>Search</button>
         </div>
-        <div id="feedid">{isSubmit && <FeedbackBy data={feedbacks} />}</div>
+        {/* <div id="feedid">{feedbacks && isSubmit && <FeedbackBy data={feedbacks} />}
+        </div> */}
+            <div id="feedid"> {isSubmit && (item ? (<FeedbackBy data={item} />) :(<FeedbackBy data={feedbacks} />)) }</div>
         </div>
+
         
     );
 }
