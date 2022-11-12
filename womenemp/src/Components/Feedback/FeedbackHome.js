@@ -36,9 +36,9 @@ function FeedbackHome() {
   }, [])
   // console.log(schemes)
   return (
-    
     <div>
         <Nav /> 
+        <div class='feedhome'>
         <div class="center">
           <div><h2>Your Feedback Matters</h2></div>
         <div class="btn-2" >
@@ -50,7 +50,7 @@ function FeedbackHome() {
        </div>
         <div class="btn-2" >
           <a href=""><span onClick={handleSearch}>Search Feedback</span></a>
-    </div></div></div>
+    </div></div></div></div>
   )
 }
 
