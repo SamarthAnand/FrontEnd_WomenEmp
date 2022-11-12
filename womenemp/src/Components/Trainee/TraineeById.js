@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { fetchFeedbackByUserId } from '../../Actions/FeedbackActions'
@@ -9,12 +10,16 @@ import Nav from '../Nav'
 function TraineeById() {
     const user = useSelector((state) => state.user)
     const trainee = useSelector((state) => state.trainee)
-    const feed = useSelector((state) => state.feedback)
+    const [feed, setFeed] = useState({})
     const dispatch = useDispatch()
     const navigate = useNavigate();
     useEffect(()=>{
         dispatch(fetchTrainee(user.userId))
         dispatch(fetchFeedbackByUserId(user.userId))
+        axios
+        .get(`http://localhost:8202/api/Feedback/User/${user.userId}`)
+        .then((data) => setFeed(data.data))
+        .catch((error) => setFeed({comment:""}))
     },[])
 
     const handleDelete = ()=> {
@@ -26,6 +31,7 @@ function TraineeById() {
     const handleUpdate = ()=> {
         navigate("/home/profile/update")
     }
+    console.log(feed)
   return (
     <div>
         <Nav />
@@ -73,11 +79,11 @@ function TraineeById() {
             </tr>
             <tr>
                 <td>Training Course :</td>
-                <td>{trainee.trainingCourse ? trainee.trainingCourse.courseName: "Null"}</td>
+                <td>{trainee.trainingCourse ? trainee.trainingCourse.courseName: ""}</td>
             </tr>
             <tr>
                 <td>Feedback : </td>
-                <td>{feed.comment ? feed.comment: "Null"}</td>
+                <td>{feed.comment ? feed.comment: ""}</td>
             </tr>
             </tbody>
         </table>
