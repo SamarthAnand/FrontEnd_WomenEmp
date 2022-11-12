@@ -65,7 +65,7 @@
   color: white;
 }
 .admin{
-  background-color: rgb(211, 233, 236);
+  background-color: rgb(30, 211, 235);
   /* margin: auto; */
 }
 .admin div{
@@ -108,3 +108,21 @@
   background-size: cover;
   height: 100vh;
 }
+.bgbyname{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrEHDBLL8PxVy4JO5msxmHELbhE0zZehB8fQ&usqp=CAU");
+
+  background-size:670px 600px;
+  height: 100vh;
+  position: relative;
+  
+}
+.textcolor{
+  color:azure;
+}
+.pos{
+  display: block;
+  width: 1050px;
+  margin:auto;
+
+}
+
