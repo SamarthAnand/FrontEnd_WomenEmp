@@ -69,7 +69,7 @@ function Scheme() {
         return errors;
     }
     return (
-        <div>
+        <div data-testid = "schemeTest">
             <NavAdmin />
         
         <Form onSubmit={handleSubmit} className="container">

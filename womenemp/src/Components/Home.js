@@ -34,7 +34,7 @@ function Home() {
   }, [])
   // console.log(schemes)
   return (
-    <div>
+    <div data-testid= "hometest">
         <Nav />
         <div id='home'>
           <button className='buttonBlue' onClick={handleScheme}> View Schemes</button>
