@@ -38,16 +38,17 @@ function FeedbackHome() {
   return (
     
     <div>
-        <Nav /> <h3 style={{ color:'lightgrey'}}>Your Feedback matters ...</h3>
-        
+        <Nav /> 
         <div class="center">
-        <div class="btn-1" >
+          <div><h2>Your Feedback Matters</h2></div>
+        <div class="btn-2" >
           <a href=""><span onClick={handleFeed}>Add Feedback</span></a>
+          
         </div>
-        <div class="btn-1" >
+        <div class="btn-2" >
           <a href=""><span onClick={updateFeed}>Update Feedback</span></a>
        </div>
-        <div class="btn-1" >
+        <div class="btn-2" >
           <a href=""><span onClick={handleSearch}>Search Feedback</span></a>
     </div></div></div>
   )
