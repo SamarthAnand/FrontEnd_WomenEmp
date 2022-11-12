@@ -57,7 +57,7 @@ export default function IndividualUser() {
               </ul>
             </div>
           </div>
-          <Link className="btn btn-primary my-2" to={"/admin"}>
+          <Link className="btn btn-primary my-2" to={"/admin/allcourses"}>
             Back to Courses!
           </Link>
         </div>

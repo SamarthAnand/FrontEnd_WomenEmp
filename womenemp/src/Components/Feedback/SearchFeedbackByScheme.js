@@ -41,6 +41,7 @@ function Feedbackbyscheme(){
         
         <div>
         {feedbacks &&<FeedbackList data={feedbacks} title="Feedback by Scheme Name" />}
+        
         <div className="feedback">
         <input type="text" id="schemeName" placeholder="Enter Scheme Name">
         </input>

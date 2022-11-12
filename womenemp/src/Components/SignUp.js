@@ -154,7 +154,7 @@ function SignUp() {
 
         <div className="field">
           <label>Date Of Birth</label>
-          <input type="date" name="dob" max="2004-12-31" onChange={handleChange}/>
+          <input type="date" name="dob" onChange={handleChange}/>
         </div>
         <p className="error">{formErrors.dob}</p>
         

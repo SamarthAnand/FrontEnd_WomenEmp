@@ -4,6 +4,7 @@ import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchSchemes } from "../../Actions/SchemeActions";
+import Nav from "../Nav";
 import { fetchFeedbackByUserId } from "../../Actions/FeedbackActions";
 import { fetchTrainee, updateTrainee } from "../../Actions/TraineeActions";
  //import Select from 'react-select';
@@ -18,7 +19,7 @@ function Feedback(){
     const d = new Date().toISOString().split("T")[0];
     const navigate = useNavigate();
     const [isSubmit, setIsSubmit] = useState(false);
-    const initialValues = {feedBackId:100,schemeRating:null,schemeTrainingRating:null,overallRating:null,user:{},schemeName:"",comment:"",date:d};
+    const initialValues = {feedBackId:100,schemeRating:null,schemeTrainingRating:null,overallRating:null,user:{},scheme:{},comment:"",date:d};
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
 
@@ -73,9 +74,9 @@ function Feedback(){
         return errors;
       }
     
-    return(
-
+    return(<div> <Nav/>
         <div className="feedback">
+          
             {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
           <div className="ui message success">Feedback added succesfully</div>
         ) : (
@@ -99,7 +100,7 @@ function Feedback(){
                 {/* <label>Scheme Name</label>
                 <select
                 required
-                name="schemeName"
+                name="scheme"
                 onChange={handleChange} onClick={getScheme}>
                     <option  disabled selected hidden>Select your option</option>
                     {schemes && schemes.map((dat)=>(
@@ -122,7 +123,8 @@ function Feedback(){
                     <option>8</option>
                     <option>9</option>
                     <option>10</option>
-                </select>
+                    
+                </select><p className="error">{formErrors.schemeRating}</p>
                 
                 
                     <label 
@@ -142,7 +144,7 @@ function Feedback(){
                     <option>8</option>
                     <option>9</option>
                     <option>10</option>
-                </select>
+                </select><p className="error">{formErrors.schemeTrainingRating}</p>
                 
                     <label >Overall Rating</label>
                 <select
@@ -160,23 +162,24 @@ function Feedback(){
                     <option>8</option>
                     <option>9</option>
                     <option>10</option>
-                </select>
+                </select><p className="error">{formErrors.overallRating}</p>
                 
             
                   <label >Comments</label>
+                  
                 <textarea
-                required 
+                 required
                 type="text"
                 onChange={handleChange}
                 name="comment"
-                placeholder="Add comments"></textarea>
+                placeholder="Add comments"></textarea><p className="error">{formErrors.comment}</p>
         
                     <button role="button">Submit</button>
                 
                 </div>
             </form>
             <div className="feedbackAfter" id='feedbackAfter'></div>
-        </div>
+        </div></div>
     )
 }
 export default Feedback;

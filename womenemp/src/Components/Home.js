@@ -14,24 +14,24 @@ function Home() {
   const ngos = useSelector((state) => state.allNgos.ngos)
   const user = useSelector((state) => state.user)
   const navigate = useNavigate();
-  const handleScheme = ()=>{
+  const handleScheme = () => {
     document.getElementById('schemes').style.display = "block";
     document.getElementById('ngos').style.display = "none";
   }
-  const handleNgo = ()=> {
+  const handleNgo = () => {
     document.getElementById('schemes').style.display = "none";
     document.getElementById('ngos').style.display = "block";
   }
-  const handleFeed = ()=>{
+  const handleFeed = () => {
     navigate("/feedback/home")
   }
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(fetchTrainee(user.userId))
     dispatch(fetchSchemes())
     dispatch(fetchNgos())
     document.getElementById('schemes').style.display = "none";
     document.getElementById('ngos').style.display = "none";
-  },[])
+  }, [])
   // console.log(schemes)
   return (
     <div>

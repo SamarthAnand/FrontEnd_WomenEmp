@@ -3,23 +3,23 @@ import { Link, useNavigate } from "react-router-dom";
 
 function Nav() {
   const navigate = useNavigate();
-  const handleProfile = ()=>{
+  const handleProfile = () => {
     navigate("/home/profile")
   }
-  const handleLogout = ()=>{
+  const handleLogout = () => {
     navigate("/")
   }
-  const handleHome = ()=>{
+  const handleHome = () => {
     navigate("/home")
   }
   return (
     <div>
       <nav className="navbarCustom">
-        <span>Women Empowerment</span>
+        <span onClick={handleHome}>Women Empowerment</span>
         <div>
-          <button type="button" class="btn btn-outline-light" onClick={handleProfile}>MyProfile</button>
-          <button type="button" class="btn btn-outline-light" onClick={handleLogout} >Logout</button>
-          <button type="button" class="btn btn-outline-light" onClick={handleHome} >Home</button>
+          <button type="button" className="btn btn-outline-light" onClick={handleProfile}>MyProfile</button>
+          <button type="button" className="btn btn-outline-light" onClick={handleLogout} >Logout</button>
+          <button type="button" className="btn btn-outline-light" onClick={handleHome} >Home</button>
         </div>
       </nav>
     </div>
