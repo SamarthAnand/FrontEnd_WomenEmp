@@ -108,3 +108,14 @@
   background-size: cover;
   height: 100vh;
 }
+.bgbyname{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrEHDBLL8PxVy4JO5msxmHELbhE0zZehB8fQ&usqp=CAU");
+
+  background-size:670px 600px;
+  height: 100vh;
+  position: relative;
+  
+}
+.textcolor{
+  color:azure;
+}
