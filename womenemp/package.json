@@ -47,5 +47,8 @@
     "moduleNameMapper": {
       "axios": "axios/dist/node/axios.cjs"
     }
+  },
+  "devDependencies": {
+    "jest-watch-typeahead": "^0.6.5"
   }
 }
