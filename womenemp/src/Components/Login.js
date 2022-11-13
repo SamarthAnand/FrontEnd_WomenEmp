@@ -71,8 +71,27 @@ function Login() {
         ) : (
           <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
         )} */}
-        <h2 id='loginHead'>Women Empowerment Website</h2>
-        <form onSubmit={handleSubmit} className="formView">
+        <h2 id='loginHead'><img  className=" bg-body rounded" style={{ 'height': "70px" ,'width':"70px" }}src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEZMRxK5gsX7XR-e4pvKhHzrGJVUi2GgNF9osFsDeEoBU4ZliguRMxy8aYZTEiUqNwUoc&usqp=CAU" alt='img'/>
+          &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Women Empowerment Website &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+          <img className=" bg-body rounded" style={{ 'height': "70px" ,'width':"90px" }} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBA6XlAeZzb8iKLsZf6A_tetxEK15EaIMvHQ&usqp=CAU" alt='img'/></h2>
+        <div className='d-flex align-items-stretch'>
+          <div className="pt-4 w-70">
+
+
+            <img className="shadow-lg p-3 mb-3 bg-body rounded loginimg" style={{ 'height': "200px" ,'width':"332px" }}
+            src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzmKyx5Td-dWCXRP5XjymapsUXUwwBtGpacA&usqp=CAU'></img>
+            <img className="shadow-lg p-3 mb-3 bg-body rounded loginimg1" 
+            src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRL4iGW9ssOMH-deA_rhGCO3XxGIMphwqNIQ&usqp=CAU'></img>
+           
+           <div style={{'fontSize':"25px",'fontWeight':"bolder",'margin-top':"5px"}} className='align'><span style={{'fontSize':"30px"}}>E</span>mpowering women to participate fully in economic life across all sectors is essential to 
+            build stronger economies, achieve internationally agreed goals for development and sustainability, 
+            and improve the quality of life for women, men, families and communities. </div> 
+          </div>
+
+
+
+        <div className='p-2 w-100'>
+        <form onSubmit={handleSubmit} className=" shadow-lg p-3 mb-5  rounded formView">
           <h3>Login Form</h3>
           <div className="ui divider"></div>
           <div className="ui form">
@@ -104,6 +123,8 @@ function Login() {
           <div id='loginAfter'></div>
         <Link to='/signup'>SignUp</Link>
         </form>
+        </div>
+      </div>
       </div>
     );
 }

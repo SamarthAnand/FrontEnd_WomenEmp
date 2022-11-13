@@ -23,8 +23,12 @@
   color: red;
 }
 .formView{
-  width: 30%;
-  margin: 10px auto;
+  width: 420px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
   background-color: antiquewhite;
   border-radius: 20px;
 }
@@ -109,20 +113,39 @@
   height: 100vh;
 }
 .bgbyname{
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrEHDBLL8PxVy4JO5msxmHELbhE0zZehB8fQ&usqp=CAU");
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2l36DvhQCKeHPnqM71hfllrxq9PQXPJ2LQQ&usqp=CAU");
 
-  background-size:670px 600px;
+  background-size: cover;
   height: 100vh;
   position: relative;
   
 }
 .textcolor{
-  color:azure;
+  color:rgb(75, 158, 158);
 }
 .pos{
   display: block;
   width: 1050px;
   margin:auto;
 
+}
+.loginimg{
+  border-radius: 5px;
+  box-shadow: inset
+  ;
+  margin-right: 5px;
+  height: 168px;
+  width: 300px;
+}
+
+.loginimg1{
+  border-radius: 5px;
+  box-shadow: inset
+  ;
+  margin-left: 10px;
+}
+.align{
+  margin-left: 4px;
+  color: rgb(255, 255, 255);
 }
 

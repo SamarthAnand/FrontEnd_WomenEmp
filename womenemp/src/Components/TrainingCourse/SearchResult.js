@@ -32,26 +32,26 @@ export default function IndividualUser() {
 
           <div className="card">
             <div className="card-header">
-              Details of course Name : {course.courseName}
+              <h4>Details of course Name : {course.courseName}</h4>
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">
-                  <b>Training Course Id :</b>
+                  <b>Training Course Id :</b> &emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                   {course.trainingCourseId}
                 </li>
                 <li className="list-group-item">
-                  <b>Training Course Duration:</b>
+                  <b>Training Course Duration:</b> &emsp; &emsp;&emsp;&ensp;&emsp;
                   {course.courseDuration}
                 </li>
                 <li className="list-group-item">
-                  <b>Training Course Starting Date:</b>
+                  <b>Training Course Starting Date:</b> &ensp;&emsp;&emsp;&emsp;
                   {course.startingDate}
                 </li>
                 <li className="list-group-item">
-                  <b>Training Course Ending Date:</b>
+                  <b>Training Course Ending Date:</b> &emsp;&emsp;&emsp;&emsp;
                   {course.endingDate}
                 </li>
                 <li className="list-group-item">
-                  <b>Training Course Completion Status:</b>
+                  <b>Training Course Completion Status:</b> &emsp;
                   {course.courseCompletionStatus}
                 </li>
               </ul>

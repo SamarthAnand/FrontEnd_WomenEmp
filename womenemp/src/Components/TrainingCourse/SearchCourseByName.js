@@ -23,10 +23,10 @@ export default function SearchCourseByName() {
       <NavAdmin />
       <div className="row ">
         <div className="textcolor">
-        <div className="col-md-6 offset-md-3 border rounded p-4 mt-5 shadow ">
-          <h2 className="text-center m-4 textcolor">Search Course......</h2>
+        <div className="col-md-6 offset-md-3 border bg-body rounded p-4 mt-5 shadow ">
+          <h2 className="text-center m-4 textcolor ">Search Course......</h2>
 
-          <form onSubmit={(e) => onSubmit(e)}>
+          <form onSubmit={(e) => onSubmit(e) } className="shadow-lg p-3 mb-5 bg-body rounded">
             <div className="mb-3">
               <label htmlFor="Name" className="form-label">
                <b> Search(by Name):</b>
