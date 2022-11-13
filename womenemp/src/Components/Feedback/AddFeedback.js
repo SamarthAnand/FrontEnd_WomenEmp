@@ -79,7 +79,7 @@ function Feedback(){
         return errors;
       }
     
-    return(<div className="feedhome"> <Nav/>
+    return(<div data-testid="addfeedback" className="feedhome"> <Nav/>
         <div className="feedback">
           
             {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
