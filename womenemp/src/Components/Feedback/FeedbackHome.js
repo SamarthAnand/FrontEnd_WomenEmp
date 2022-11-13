@@ -16,12 +16,12 @@ function FeedbackHome() {
     navigate("/feedback")
   }
   const updateFeed = () => {
-    if(trainee.feedback.feedBackId){
+    // if(trainee.feedback){
       navigate("/updatefeedback");
-    }
-    else{
-      alert("Add Feedback First");
-    }
+    // }
+    // else{
+    //   alert("Add Feedback First");
+    // }
     
   }
   const handleSearch = () => {
@@ -42,14 +42,14 @@ function FeedbackHome() {
         <div class="center">
           <div><h2>Your Feedback Matters</h2></div>
         <div class="btn-2" >
-          <a href=""><span onClick={handleFeed}>Add Feedback</span></a>
+          <button className='buttonBlue' onClick={handleFeed}>Add Feedback</button>
           
         </div>
         <div class="btn-2" >
-          <a href=""><span onClick={updateFeed}>Update Feedback</span></a>
+          <button className='buttonBlue' onClick={updateFeed}>Update Feedback</button>
        </div>
         <div class="btn-2" >
-          <a href=""><span onClick={handleSearch}>Search Feedback</span></a>
+          <button className='buttonBlue' onClick={handleSearch}>Search Feedback</button>
     </div></div></div></div>
   )
 }

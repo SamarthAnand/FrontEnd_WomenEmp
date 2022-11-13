@@ -53,15 +53,9 @@ function Search() {
     }
     const validate = (value) => {
         const errors = {}
-        if(!value.feedBackId){
+        if(!value.feedBackId && !value.scheme && !value.training){
           errors.feedBackId = "Please provide details"
         }
-        if(!value.scheme){
-            errors.scheme = "Please provide details"
-          }
-          if(!value.training){
-            errors.training = "Please provide details"
-          }
         return errors;
     }
 

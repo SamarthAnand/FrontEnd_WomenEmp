@@ -15,7 +15,7 @@ function Feedback(){
     const currUser = useSelector((state) => state.user);
     const trainee = useSelector((state) => state.trainee)
     // const trainee = useSelector((state) => state.trainee)
-    // const feed = useSelector((state) => state.feedback)
+    // const [feed, setFeed] =  useState({})
     // const schemes = useSelector((state) => state.allSchemes.schemes);
     const d = new Date().toISOString().split("T")[0];
     const navigate = useNavigate();
@@ -51,12 +51,9 @@ function Feedback(){
            axios
           .post(`http://localhost:8202/api/Feedback`,formValues)
           .then((res) => {
-            alert("Feedback Submitted");
-            // dispatch(fetchFeedbackByUserId(currUser.userId))
-            // dispatch(fetchTrainee(currUser.userId))
-            // trainee.feedback = feed
-            // dispatch(updateTrainee(trainee))
+            
             navigate('/home');
+            alert("Feedback Submitted");
           })
           .catch((arr)=>{
             alert("Feedback already present")

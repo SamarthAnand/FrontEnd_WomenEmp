@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSchemesById, fetchSchemesByType, fetchSchemesByLaunchDate } from "../../Actions/SchemeActions";
 import Nav from "../Nav";
+import NavAdmin from '../NavAdmin';
 
 function SearchScheme() {
     const schemes = useSelector((state) => state.allSchemes.schemes);
@@ -69,9 +70,9 @@ function SearchScheme() {
 
     return (
         <div>
-            <Nav />
-            <div className="feedback">
-                <h2>Search Feedbacks</h2>
+            <NavAdmin />
+            <div >
+                <h2>Search Scheme</h2> 
                 <select
                     required
                     id="searchoption">
