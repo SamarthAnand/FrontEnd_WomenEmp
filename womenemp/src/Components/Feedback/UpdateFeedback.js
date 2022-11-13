@@ -53,7 +53,7 @@ function UpdateFeedback(){
         return errors;
       }
     
-    return(<div><Nav/>
+    return(<div className="feedhome"><Nav/>
 
         <div className="feedback">
             {/* {Object.keys(formErrors).length === 0 && isSubmit ? (

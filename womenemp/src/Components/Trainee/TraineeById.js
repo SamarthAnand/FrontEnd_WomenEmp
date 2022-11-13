@@ -35,7 +35,7 @@ function TraineeById() {
   return (
     <div data-testid="traineeById">
         <Nav />
-        <table class="table table-striped">
+        <table class="table table-striped" style={{width:"500px",margin:"auto"}}>
             <tbody>
             <tr>
                 <td>Trainee Id :</td>

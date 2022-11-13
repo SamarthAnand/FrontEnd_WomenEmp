@@ -13,7 +13,7 @@ function ViewAllFeedback() {
   return (
     <div>
       <NavAdmin />
-      <FeedbackList data={feedbacks} title="All Feedbacks" />
+      <FeedbackList data={feedbacks}/>
     </div>
   );
 }
