@@ -45,7 +45,7 @@ function Home() {
     <div>
       <Nav />
       <Carousel activeIndex={index} onSelect={handleSelect}>
-        <Carousel.Item style={{ 'height': "300px" }}>
+        <Carousel.Item interval={1000} style={{ 'height': "300px" }}>
           <img
             className="d-block w-100"
             src={`https://img.freepik.com/free-vector/flat-hand-drawn-international-women-s-day-illustration_23-2148863944.jpg?w=2000`}
@@ -54,7 +54,7 @@ function Home() {
           />
 
         </Carousel.Item>
-        <Carousel.Item style={{ 'height': "300px" }}>
+        <Carousel.Item interval={1000} style={{ 'height': "300px" }}>
           <img
             className="d-block w-100"
             src={`https://media.istockphoto.com/photos/happy-confident-asian-woman-raising-her-hands-up-relax-on-summer-picture-id1334123325?b=1&k=20&m=1334123325&s=170667a&w=0&h=OnSoZn8-zQwKzErKrkctlnCe6yOLrhbMCyZHJJ03Leo=`}
@@ -64,7 +64,7 @@ function Home() {
 
 
         </Carousel.Item>
-        <Carousel.Item style={{ 'height': "300px" }}>
+        <Carousel.Item interval={1000} style={{ 'height': "300px" }}>
           <img
             className="d-block w-100"
             src={`https://www.kristendarcy.com/wp-content/uploads/2015/03/women-empowerment-quotes-hd-wallpaper-17.jpg`}

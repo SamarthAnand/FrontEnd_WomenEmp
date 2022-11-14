@@ -1,10 +1,29 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from "axios";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import Card from "react-bootstrap/Card";
 import ListGroup from 'react-bootstrap/ListGroup';
 
+
 function SchemesBy({ data }) {
 
+    const navigate = useNavigate();
+    const [schemes, setSchemes] = useState([])
+    const [del, setDel] = useState(false);
+    const { schemeId } = useParams()
+
+    const deleteCourse = async (schemeId) => {
+        setDel(true);
+        await axios.delete(`http://localhost:8202/api/Schemes/${schemeId}`)
+        alert("Scheme deleted.")
+        navigate('/admin');
+
+    }
+
+    // const handleUpdate = () => {
+    //     navigate("/home//update")
+    // }
     return (
 
         <div className="mx-auto" style={{ width: "500px" }}>
@@ -22,13 +41,17 @@ function SchemesBy({ data }) {
 
                     </ListGroup>
                 </Card.Body>
+                {/*<Link to={`/admin/update-scheme/${data.schemeId}`} className="btn btn-outline-primary shadow mx-2">Update</Link>
+                */}
+
+                <button className="btn btn-danger border shadowmx-2" onClick={() => deleteCourse(data.schemeId)}>Delete</button>
+
             </Card>
-            {/* 
-              <ListGroup.Item>Training Course Provided : {data.trainingCourse.courseName}</ListGroup.Item>
 
-        <button className='buttonBlue' onClick={handleUpdate}>Update</button>
-        <button className='buttonBlue' onClick={handleDelete} style={{backgroundColor:"Red"}}>Delete</button> */}
 
-        </div>)
+
+        </div>
+
+    )
 }
 export default SchemesBy;
