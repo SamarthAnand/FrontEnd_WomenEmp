@@ -30,3 +30,8 @@ export const fetchSchemesByLaunchDate = (launchDate) =>
         const response = await WomenEmpApi.get(`/Schemes/date/${launchDate}`)
         dispatch({ type: 'getAllSchemes', payload: response.data })
     };
+export const updateSchemes = (scheme) =>
+    async function (dispatch) {
+        const response = await WomenEmpApi.put(`/Schemes`, scheme)
+        dispatch({ type: 'updateScheme', payload: response.data })
+    };

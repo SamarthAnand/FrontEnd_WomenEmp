@@ -16,6 +16,7 @@ import SearchResults from "./Components/Scheme/SearchResults";
 import Scheme from "./Components/Scheme/Scheme";
 import SchemesList from "./Components/Scheme/SchemesList";
 import SearchScheme from "./Components/Scheme/SearchScheme";
+import UpdateScheme from "./Components/Scheme/UpdateScheme";
 import TraineeById from "./Components/Trainee/TraineeById";
 import Feedback from "./Components/Feedback/AddFeedback";
 import ViewAllFeedback from "./Components/Feedback/ViewAllFeedback";
@@ -41,6 +42,7 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/addscheme" element={<Scheme />} />
           <Route path="/admin/schemes" element={<SchemesList />} />
+          <Route path="/admin/update-scheme/:schemeId" element={<UpdateScheme />} />
           <Route path="/admin/search-scheme" element={<SearchScheme />} />
           <Route path="/admin/search-scheme-by-type/:schemeType" element={<SearchResults />} />
 

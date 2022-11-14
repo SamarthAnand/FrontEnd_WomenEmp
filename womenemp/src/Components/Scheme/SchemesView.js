@@ -26,7 +26,7 @@ export default function SchemesView({ schemes }) {
           </tr>
         </thead>
         <tbody>
-          {schemes &&
+          {
             schemes.map((scheme) => (
               <tr>
                 <td>{scheme.schemeId}</td>

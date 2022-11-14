@@ -8,15 +8,7 @@ import { addSchemes } from "../../../Actions/SchemeActions";
 
 jest.mock("axios");
 
-const dummyValues = [
-  {
-    schemeName: "happy",
-    schemeType: "go",
-    schemeEligibility: "yes",
-    launchDate: "2022-11-01",
-    schemeObjective: "none"
-  }
-]
+
 describe("Customer Profile Page Tests", () => {
   it("Rendered customer profile page", () => {
     const { getByTestId } = render(
