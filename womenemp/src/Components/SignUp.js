@@ -95,7 +95,7 @@ function SignUp() {
         ) : (
           <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
         )} */}
-      <form onSubmit={handleSubmit} className="formView">
+      <form onSubmit={handleSubmit} className="formView" style={{margin:"auto"}}>
         <h1>Register New User</h1>
 
         <div className="field">

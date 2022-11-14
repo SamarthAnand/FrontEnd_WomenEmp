@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-
 import { useSelector, useDispatch } from "react-redux";
 import { fetchfeedbacksByScheme, fetchFeedback, fetchfeedbacksByTraining } from "../../Actions/FeedbackActions";
 import FeedbackBy from "./FeedbackBy";
 import Nav from "../Nav";
+import "../../Style/style.css";
 
 function Search() {
     const feedbacks = useSelector((state) => state.allfeedbacks.feedbacks);
@@ -26,7 +26,7 @@ function Search() {
             console.log(feedbacks)
         })
         .catch((err)=>{
-            alert("Feedback not found")
+            alert("Feedback for given id not present")
             
         })
         if(isSubmit && search.value ==="By Scheme Name" && scheme.value)
@@ -53,9 +53,6 @@ function Search() {
     }
     const validate = (value) => {
         const errors = {}
-        if(!value.feedBackId && !value.scheme && !value.training){
-          errors.feedBackId = "Please provide details"
-        }
         return errors;
     }
 
@@ -77,12 +74,8 @@ function Search() {
         <p className="error">{formErrors.feedBackId}</p>
         <button onClick={handleSubmit}>Search</button>
         </div>
-        {/* <div id="feedid">{feedbacks && isSubmit && <FeedbackBy data={feedbacks} />}
-        </div> */}
             <div id="feedid"> {isSubmit && (item ? (<FeedbackBy data={item} />) : (<FeedbackBy data={feedbacks} />))}</div>
         </div>
-
-
     );
 }
 export default Search;

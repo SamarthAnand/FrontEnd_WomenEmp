@@ -1,9 +1,4 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { fetchFeedback } from '../../Actions/FeedbackActions'
-import { deleteTrainee, fetchTrainee } from '../../Actions/TraineeActions'
-import { deleteUser } from '../../Actions/UserAction'
+import React from 'react'
 import Card from "react-bootstrap/Card";
 import ListGroup from 'react-bootstrap/ListGroup';
 
@@ -30,9 +25,6 @@ function FeedbackBy({data}) {
                 </ListGroup>
             </Card.Body>
         </Card>
-{/* 
-        <button className='buttonBlue' onClick={handleUpdate}>Update</button>
-        <button className='buttonBlue' onClick={handleDelete} style={{backgroundColor:"Red"}}>Delete</button> */}
 
     </div>)
 }

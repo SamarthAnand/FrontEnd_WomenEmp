@@ -1,21 +1,21 @@
 .feedhome {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    background-image:url("images/5.jpg") ;
-  height:100%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  text-align:center;
-  margin:auto;
-  padding:0;
-  background-color: aqua;
-    
-  }
+  background-image:url("images/5.jpg") ;
+  min-height: 700px;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+ 
+}
   .center {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     position: absolute;
     left: 50%;
     top: 50%;
+    background: transparent;
     transform: translate(-50%, -50%);
     margin-top: 100px;
     justify-content: center;
@@ -23,8 +23,6 @@
     min-height: 100vh;
     font-size: 24px;
   }
-  
-
   .btn-2 {
     width: 300px;
     height: 100px;
@@ -33,8 +31,6 @@
     align-items: center;
     flex-direction: column;
   }
-
- 
   .btn-2 a {
     text-decoration: none;
     border: 2px solid #010100;
@@ -48,11 +44,10 @@
   
   span {
     position: relative;
-    /* z-index coz when we put bg to before and after this span text will not be visible */
     z-index: 3;
   }
   
-  /* Button 1 styles */
+
 
   
   .btn-1 a:hover::before,
@@ -67,7 +62,7 @@
     transform: scaleX(0);
   }
   
-  /* Button 2 styles */
+ 
   
   .btn-2 a {
     color: #ffffff;
@@ -103,5 +98,4 @@
     transform: scaleX(1);
   }
   
-  /* Created by http://grohit.com/  */
  

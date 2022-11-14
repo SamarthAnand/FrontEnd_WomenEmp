@@ -5,8 +5,7 @@ import {useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchSchemes } from "../../Actions/SchemeActions";
 import Nav from "../Nav";
-import { fetchFeedbackByUserId } from "../../Actions/FeedbackActions";
-import { fetchTrainee, updateTrainee } from "../../Actions/TraineeActions";
+import { fetchTrainee } from "../../Actions/TraineeActions";
  //import Select from 'react-select';
 
 function Feedback(){ 

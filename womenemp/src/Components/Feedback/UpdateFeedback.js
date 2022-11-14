@@ -29,6 +29,7 @@ function UpdateFeedback(){
     }
     useEffect(()=>{
         console.log(formErrors)
+        console.log(feed)
         if(Object.keys(formErrors).length === 0 && isSubmit){
           dispatch(updateFeedback(formValues));
           navigate("/feedback/home")
@@ -55,7 +56,7 @@ function UpdateFeedback(){
     
     return(<div className="feedhome"><Nav/>
 
-        <div className="feedback">
+        <div className="feedback" data-testid="updatefeedback">
             {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
           <div className="ui message success">Feedback added succesfully</div>
         ) : (

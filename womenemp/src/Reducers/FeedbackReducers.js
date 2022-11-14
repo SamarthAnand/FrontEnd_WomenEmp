@@ -1,4 +1,3 @@
-import React from 'react'
 
 const inititalState = {
     feedbacks : []
@@ -24,8 +23,6 @@ export const selectedFeedbackReducer = (state = {}, action) => {
             return {...state, ...action.payload}
         case 'updateFeedback' :
             return {...state, ...action.payload}
-        case 'deleteFeedback' :
-            return {}
         default :
             return state
     }
