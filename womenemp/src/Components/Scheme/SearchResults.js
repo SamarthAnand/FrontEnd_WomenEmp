@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 export default function SearchResults() {
+    /**
+     * states and redux function calls.
+     */
     const [scheme, setScheme] = useState({
         schemeId: "",
         schemeName: "",
@@ -18,9 +21,18 @@ export default function SearchResults() {
     useEffect(() => {
         loadScheme();
     }, []);
+    /**
+ * @function loadScheme
+ * @param 
+ * @desc sends an async request to search by schemeType 
+ * sets schemes with the data.
+ * sends alert when complete 
+ * 
+ * */
 
     const loadScheme = async () => {
         const result = await axios.get(`http://localhost:8202/api/Schemes/schemeType/${schemeType}`);
+        console.log("result -> ", result);
         setScheme(result.data[0]);
         alert("Search Complete")
     };
