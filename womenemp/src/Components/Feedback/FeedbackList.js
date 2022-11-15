@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+
+//handles viewing all feeedbacks by admin 
 
 const FeedbackList =({data,title})=>{
     return (<div className="feedhome">

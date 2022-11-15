@@ -6,16 +6,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchSchemes } from "../../Actions/SchemeActions";
 import Nav from "../Nav";
 import { fetchTrainee } from "../../Actions/TraineeActions";
- //import Select from 'react-select';
+
 
 function Feedback(){ 
     
     const dispatch= useDispatch();
     const currUser = useSelector((state) => state.user);
-    const trainee = useSelector((state) => state.trainee)
-    // const trainee = useSelector((state) => state.trainee)
-    // const [feed, setFeed] =  useState({})
-    // const schemes = useSelector((state) => state.allSchemes.schemes);
+    const trainee = useSelector((state) => state.trainee);
     const d = new Date().toISOString().split("T")[0];
     const navigate = useNavigate();
     const [isSubmit, setIsSubmit] = useState(false);
@@ -40,9 +37,7 @@ function Feedback(){
     useEffect(()=>{
         console.log(formErrors)
         dispatch(fetchTrainee(currUser.userId))
-        // .then(console.log(trainee))
         if(Object.keys(formErrors).length === 0 && isSubmit){
-          // console.log(currUser);
           formValues.user = currUser;
           formValues.trainingCourse= trainee.trainingCourse;
 
@@ -52,10 +47,10 @@ function Feedback(){
           .then((res) => {
             
             navigate('/home');
-            alert("Feedback Submitted");
+            alert("FEEDBACK SUBMITTED");
           })
           .catch((arr)=>{
-            alert("Feedback already present")
+            alert("FEEDBACK ALREADY PRESENT")
             navigate('/feedback/home');
           })
       }
@@ -88,18 +83,6 @@ function Feedback(){
         )} */}
             <h2>Give your Feedback</h2>
             <form onSubmit={handleSubmit}>
-                {/* <div><label>FeedbackID</label>
-                <input type="number" 
-                name="feedBackId"
-                onChange={handleChange}></input></div> */}
-                {/* <div>
-                    
-                    <input type="number" name="schemeRating"></input>
-                    <label>Scheme Rating</label>
-                    <input type="number" name="schemeTrainingRating"></input>
-                    <label>Scheme Rating</label>
-                    <input type="number" name="overallRating"></input>
-                    </div> */}
               <div>
                 {/* <label>Scheme Name</label>
                 <select

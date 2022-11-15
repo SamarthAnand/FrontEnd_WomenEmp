@@ -3,14 +3,14 @@ import WomenEmpApi from '../Api/WomenEmpApi'
 export const fetchSchemes = () =>
     async function (dispatch) {
         const response = await WomenEmpApi.get("/Schemes")
-        console.log(response)
+        // console.log(response)
         dispatch({ type: 'getAllSchemes', payload: response.data })
     };
 
 export const fetchSchemesById = (id) =>
     async function (dispatch) {
         const response = await WomenEmpApi.get(`/Schemes/${id}`)
-        console.log(response)
+        // console.log(response)
         dispatch({ type: 'getAllSchemes', payload: response.data })
     };
 export const addSchemes = (scheme) =>
