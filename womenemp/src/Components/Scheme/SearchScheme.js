@@ -8,6 +8,9 @@ import Nav from "../Nav";
 import NavAdmin from '../NavAdmin';
 
 function SearchScheme() {
+    /**
+     * states and redux function calls.
+     */
     const schemes = useSelector((state) => state.allSchemes.schemes);
     const dispatch = useDispatch();
     //  const schemeName= document.getElementById("schemeName");
@@ -44,7 +47,16 @@ function SearchScheme() {
                     alert("scheme not present on this launch date ");
                 })
         }
+
     }, [formErrors]);
+
+
+    /**
+   * @function handleSubmit
+   * @param {event} e on Click of submit button
+   * @desc prevents the default function of submit, 
+   *          sets the formErrors if any else isSubmit == true;
+   */
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -55,15 +67,8 @@ function SearchScheme() {
     }
     const validate = (value) => {
         const errors = {}
-        if (!value.schemeId) {
-            errors.feedbackId = "Please provide Scheme Id"
-        }
-        if (!value.schemeType) {
-            errors.schemeName = "Please provide Scheme Type"
-        }
-        if (!value.schemeLaunchDate) {
-            errors.schemeName = "Please provide Scheme's LAunch Date "
-        }
+
+
         return errors;
     }
 
@@ -72,7 +77,7 @@ function SearchScheme() {
         <div>
             <NavAdmin />
             <div >
-                <h2>Search Scheme</h2> 
+                <h2>Search Scheme</h2>
                 <select
                     required
                     id="searchoption">
@@ -88,6 +93,7 @@ function SearchScheme() {
             {/* <div id="feedid">{feedbacks && isSubmit && <FeedbackBy data={feedbacks} />}
         </div> */}
             <div id="feedid"> {isSubmit && (item ? (<SchemesBy data={item} />) : (<SchemesBy data={schemes} />))}</div>
+
         </div>
 
     )

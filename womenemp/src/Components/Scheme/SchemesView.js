@@ -3,8 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateTrainee } from "../../Actions/TraineeActions";
 
 export default function SchemesView({ schemes }) {
+  /**
+     * states and redux function calls.
+     */
   const dispatch = useDispatch();
   const trainee = useSelector((state) => state.trainee);
+  /**
+ * @function handleClick
+ * @param {event} e on Click of  button
+ * @desc updates the data 
+ */
   const handleClick = (course) => {
     trainee.trainingCourse = course;
     dispatch(updateTrainee(trainee));
@@ -27,7 +35,7 @@ export default function SchemesView({ schemes }) {
         </thead>
         <tbody>
           {
-            schemes.map((scheme) => (
+            schemes.sort((a, b) => a.schemeId - b.schemeId).map((scheme) => (
               <tr>
                 <td>{scheme.schemeId}</td>
                 <td>{scheme.schemeName}</td>

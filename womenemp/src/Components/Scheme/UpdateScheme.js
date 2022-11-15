@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { updateSchemes } from '../../Actions/SchemeActions';
 import { useEffect, useState } from "react";
 
@@ -11,8 +11,12 @@ import Row from 'react-bootstrap/Row';
 import NavAdmin from '../NavAdmin';
 
 function UpdateScheme() {
+    /**
+     * states and redux function calls.
+     */
 
-    const schemes = useSelector((state) => state.scheme)
+    const schemes = useSelector((state) => state.schemeById)
+    const { schemeId } = useParams();
     const navigate = useNavigate()
     const dispatch = useDispatch();
 
@@ -20,11 +24,21 @@ function UpdateScheme() {
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
 
+    /**
+ * @function handleChange
+ * @param {event} e on Change of any event in the input box
+ * @desc sets the formValues to these input values.
+ */
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
     };
-
+    /**
+     * @function handleSubmit
+     * @param {event} e on Click of submit button
+     * @desc prevents the default function of submit, 
+     *          sets the formErrors if any else isSubmit == true;
+     */
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormErrors(validate(formValues));
@@ -34,6 +48,7 @@ function UpdateScheme() {
     useEffect(() => {
         console.log(formErrors)
         if (Object.keys(formErrors).length === 0 && isSubmit) {
+            formValues.schemeId = schemeId;
             dispatch(updateSchemes(formValues));
             navigate("/admin")
             alert("Successfully updated")

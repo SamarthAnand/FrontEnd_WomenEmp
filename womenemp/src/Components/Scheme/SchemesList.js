@@ -7,8 +7,15 @@ import NavAdmin from '../NavAdmin';
 
 
 function SchemesList() {
+    /**
+     * states and redux function calls.
+     */
     const schemes = useSelector((state) => state.allSchemes.schemes)
-    const dispatch = useDispatch() 
+    const dispatch = useDispatch()
+    /**
+ * @function useEffect
+ * @desc fetches the schemes list 
+ */
     useEffect(() => {
         dispatch(fetchSchemes())
     }, []);

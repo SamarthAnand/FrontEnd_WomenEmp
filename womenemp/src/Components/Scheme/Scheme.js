@@ -13,7 +13,9 @@ import { addSchemes } from '../../Actions/SchemeActions';
 
 
 function Scheme() {
-    //  const [date, setDate] = useState(new Date());
+    /**
+     * states and redux function calls.
+     */
     const dispatch = useDispatch()
     const navigate = useNavigate();
     const initialValues = {
@@ -22,11 +24,21 @@ function Scheme() {
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
-
+    /**
+    * @function handleChange
+    * @param {event} e on Change of any event in the input box
+    * @desc sets the formValues to these input values.
+    */
     const handleChange = (e) => {
         const { name, value } = e.target
         setFormValues({ ...formValues, [name]: value });
     }
+    /**
+* @function handleSubmit
+* @param {event} e on Click of submit button
+* @desc prevents the default function of submit, 
+*          sets the formErrors if any else isSubmit == true;
+*/
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormErrors(validate(formValues))
@@ -78,7 +90,7 @@ function Scheme() {
         return errors;
     }
     return (
-        <div data-testid = "schemeTest">
+        <div data-testid="schemeTest">
             <NavAdmin />
 
             <Form onSubmit={handleSubmit} className="container">
